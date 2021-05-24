@@ -23,7 +23,7 @@
                   @enderror
                 </div>
                 <div class="form-group col-lg-6">
-                  <input type="number" name="no_hp" id="no_hp" class="form-control @error('no_hp') is-invalid @enderror" placeholder="Input nomor handphone" value="{{ ole('no_hp') }}">
+                  <input type="number" name="no_hp" id="no_hp" class="form-control @error('no_hp') is-invalid @enderror" placeholder="Input nomor handphone" value="{{ old('no_hp') }}">
                   @error('no_hp')
                     <p class="text-danger">{{ $message }}</p>
                   @enderror
