@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ViewController;
 
+// Dashboard
+use App\Http\Controllers\Dashboard\DashboardController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,3 +20,9 @@ use App\Http\Controllers\ViewController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/view', [ViewController::class, 'index'])->name('view');
+
+// Dashboard
+Route::prefix('/admin')
+      ->group(function() {
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    });

@@ -17,20 +17,20 @@
               @csrf
               <div class="form-row">
                 <div class="form-group col-lg-6">
-                  <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Input nama kamu" autofocus>
+                  <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" placeholder="Input nama kamu" autofocus value="{{ old('name') }}">
                   @error('name')
                     <p class="text-danger">{{ $message }}</p>
                   @enderror
                 </div>
                 <div class="form-group col-lg-6">
-                  <input type="number" name="no_telp" id="no_telp" class="form-control @error('no_telp') is-invalid @enderror" placeholder="Input nomor handphone">
-                  @error('no_telp')
+                  <input type="number" name="no_hp" id="no_hp" class="form-control @error('no_hp') is-invalid @enderror" placeholder="Input nomor handphone" value="{{ ole('no_hp') }}">
+                  @error('no_hp')
                     <p class="text-danger">{{ $message }}</p>
                   @enderror
                 </div>
               </div>
               <div class="form-group">
-                <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="Input email kamu">
+                <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" placeholder="Input email kamu" value="{{ old('email') }}">
                 @error('email')
                   <p class="text-danger">{{ $message }}</p>
                 @enderror
