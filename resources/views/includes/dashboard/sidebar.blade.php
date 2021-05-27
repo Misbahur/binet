@@ -8,13 +8,25 @@
   </a>
   <!-- Divider -->
   <hr class="sidebar-divider my-0">
-  <!-- Nav Item - Dashboard -->
-  <li class="nav-item active">
-    <a class="nav-link" href="index.html">
-      <i class="fas fa-fw fa-tachometer-alt"></i>
-      <span>Dashboard</span>
-    </a>
-  </li>
+  @auth
+    @if (Auth::user()->role == "Admin")
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard Admin</span>
+        </a>
+      </li>
+    @elseif(Auth::user()->role == "Author")
+      <!-- Nav Item - Author -->
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard Author</span>
+        </a>
+      </li>
+    @endif
+  @endauth
   <!-- Divider -->
   <hr class="sidebar-divider">
   <!-- Sidebar Toggler (Sidebar) -->

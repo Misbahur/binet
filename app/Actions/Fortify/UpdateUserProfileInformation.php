@@ -20,7 +20,6 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
     {
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
-
             'email' => [
                 'required',
                 'string',
@@ -28,7 +27,14 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'max:255',
                 Rule::unique('users')->ignore($user->id),
             ],
+            'no_hp' => ['required', 'string', 'max:13'],
+            'profil' => ['required', 'file', 'max:1024'],
+            'alamat' => ['required', 'string'],
         ])->validateWithBag('updateProfileInformation');
+
+        $profil = $input['profil'];
+        $nameProfil = 'profil' . '-' . date('d-m-Y') . '-' . $profil->getClientOriginalName();
+        $profil->move(public_path('/storage/profil'), $nameProfil);
 
         if ($input['email'] !== $user->email &&
             $user instanceof MustVerifyEmail) {
@@ -37,6 +43,9 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->forceFill([
                 'name' => $input['name'],
                 'email' => $input['email'],
+                'no_hp' => $input['no_hp'],
+                'profil' => $nameProfil,
+                'alamat' => $input['alamat'],
             ])->save();
         }
     }

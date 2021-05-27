@@ -25,4 +25,5 @@ Route::get('/view', [ViewController::class, 'index'])->name('view');
 Route::prefix('/admin')
       ->group(function() {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        Route::view('/profile', 'dashboard.profile.profil');
     });
