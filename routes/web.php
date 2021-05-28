@@ -6,6 +6,7 @@ use App\Http\Controllers\ViewController;
 
 // Dashboard
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\KategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,5 @@ Route::prefix('/admin')
       ->group(function() {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::view('/profile', 'dashboard.profile.profil');
+        Route::resource('/kategori', KategoriController::class);
     });

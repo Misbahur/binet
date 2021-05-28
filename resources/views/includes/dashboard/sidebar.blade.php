@@ -12,15 +12,21 @@
     @if (Auth::user()->role == "Admin")
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ route('dashboard') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard Admin</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ route('kategori.index') }}">
+          <i class="fas fa-fw fa-list"></i>
+          <span>Kategori Berita</span>
         </a>
       </li>
     @elseif(Auth::user()->role == "Author")
       <!-- Nav Item - Author -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{ route('dashboard') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard Author</span>
         </a>
