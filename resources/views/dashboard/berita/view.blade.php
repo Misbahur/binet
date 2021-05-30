@@ -95,7 +95,7 @@
             <div class="main-news">
               <div class="main-image">
                 <img src="{{ url('/storage/banner/', $news->banner) }}" alt="" class="img-fluid rounded mx-auto d-block">
-                <p class="text-center pt-2">{{ $news->created_at }}</p>
+                <p class="text-center pt-2">{{ $news->status->hari . ' / ' . $news->status->tgl }}</p>
               </div>
               <div class="main-title text-center mt-3">
                 <h1>{{ $news->judul }}</h1>

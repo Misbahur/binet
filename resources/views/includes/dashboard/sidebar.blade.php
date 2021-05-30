@@ -37,6 +37,12 @@
           <span>Berita</span>
         </a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ route('status.index') }}">
+          <i class="fas fa-fw fa-upload"></i>
+          <span>Status</span>
+        </a>
+      </li>
     @endif
   @endauth
   <!-- Divider -->

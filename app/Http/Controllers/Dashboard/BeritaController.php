@@ -14,7 +14,7 @@ class BeritaController extends Controller
 {
     public function index()
     {
-        $news = News::where('user_id', Auth::user()->id)->with(['status'])->get();
+        $news = News::where('user_id', Auth::user()->id)->with(['status'])->orderByDesc('created_at')->get();
         return view('dashboard.berita.berita', compact('news'));
     }
 
@@ -53,7 +53,7 @@ class BeritaController extends Controller
         ]);
 
         Status::create([
-            'status' => 'Pendding',
+            'status' => 'Pending',
             'news_id' => $news->id,
         ]);
 

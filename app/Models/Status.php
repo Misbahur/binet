@@ -12,7 +12,7 @@ class Status extends Model
 
     protected $table = 'statuses';
 
-    protected $fillable = ['status', 'news_id'];
+    protected $fillable = ['status', 'hari', 'tgl', 'news_id'];
 
     public function news()
     {
