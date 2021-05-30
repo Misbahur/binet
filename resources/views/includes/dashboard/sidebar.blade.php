@@ -31,6 +31,12 @@
           <span>Dashboard Author</span>
         </a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ route('berita.index') }}">
+          <i class="fas fa-fw fa-newspaper"></i>
+          <span>Berita</span>
+        </a>
+      </li>
     @endif
   @endauth
   <!-- Divider -->

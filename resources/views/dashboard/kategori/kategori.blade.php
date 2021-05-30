@@ -10,8 +10,11 @@
       </div>
       <div class="col-12 col-lg-6">
         @if (session('alert'))
-          <div class="alert alert-success">
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ session('alert') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
         @endif
       </div>
@@ -34,7 +37,7 @@
             <td>{{ $category->kategori }}</td>
             <td>
               <a href="{{ route('kategori.edit', $category->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
-              <form action="{{ route('kategori.destroy', $category->id) }}" method="POST" class=" d-inline">
+              <form action="{{ route('kategori.destroy', $category->id) }}" method="POST" class="d-inline">
                 @csrf
                 @method('delete')
                 <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>

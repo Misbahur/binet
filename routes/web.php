@@ -7,6 +7,7 @@ use App\Http\Controllers\ViewController;
 // Dashboard
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\KategoriController;
+use App\Http\Controllers\Dashboard\BeritaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +29,5 @@ Route::prefix('/admin')
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::view('/profile', 'dashboard.profile.profil');
         Route::resource('/kategori', KategoriController::class);
+        Route::resource('/berita', BeritaController::class);
     });

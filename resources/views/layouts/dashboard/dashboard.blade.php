@@ -15,6 +15,9 @@
   {{-- Datatables --}}
   <link rel="stylesheet" href="{{ url('/frontend/library/dataTables/datatables.min.css') }}">
 
+  {{-- Summernote --}}
+  <link rel="stylesheet" href="{{ url('/frontend/library/summernote/summernote-lite.min.css') }}">
+
   <!-- Custom fonts for this template-->
   <link href="{{ url('frontend/library/sbadmin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -84,10 +87,51 @@
 
   {{-- Datatables --}}
   <script src="{{ url('/frontend/library/dataTables/datatables.min.js') }}"></script>
+
+  {{-- Summernote --}}
+  <script src="{{ url('/frontend/library/summernote/summernote-lite.min.js') }}"></script>
+  
   <script>
+    //Datatables
     $(document).ready(function() {
       $('#example').DataTable();
     } );
+
+    // Preview Image
+    function previewImageThumbnail() {
+      var oFReader = new FileReader();
+      oFReader.readAsDataURL(document.getElementById("thumbnail").files[0]);
+      oFReader.onload = function (oFREvent)
+      {
+          document.getElementById("previewThumbnail").src = oFREvent.target.result;
+      };
+    };
+
+    function previewImageBanner() {
+      var oFReader = new FileReader();
+      oFReader.readAsDataURL(document.getElementById("banner").files[0]);
+      oFReader.onload = function (oFREvent)
+      {
+          document.getElementById("previewBanner").src = oFREvent.target.result;
+      };
+    };
+
+    // Summernote
+    $('#berita').summernote({
+      placeholder: 'Ada berita apa hari ini??',
+      tabsize: 2,
+      height: 400,
+      toolbar: [
+        ['style', ['style']],
+        ['font', ['bold', 'underline', 'clear']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['table', ['table']],
+        ['insert', ['link', 'picture', 'video', 'videoAttributes', 'media']],
+        ['view', ['fullscreen', 'codeview', 'help']]
+      ]
+    });
+
   </script>
 
 </body>
