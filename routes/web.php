@@ -9,6 +9,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\KategoriController;
 use App\Http\Controllers\Dashboard\BeritaController;
 use App\Http\Controllers\Dashboard\StatusController;
+use App\Http\Controllers\Dashboard\AdminBeritaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +26,13 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/view', [ViewController::class, 'index'])->name('view');
 
 // Dashboard
-Route::prefix('/admin')
+Route::prefix('/dashboard')
       ->group(function() {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::view('/profile', 'dashboard.profile.profil');
         Route::resource('/kategori', KategoriController::class);
-        Route::resource('/berita', BeritaController::class);
+        Route::resource('/adminberita', AdminBeritaController::class);
+        Route::get('/adminberita/view/{id}', [AdminBeritaController::class, 'view']);
+        Route::resource('/authorberita', BeritaController::class);
         Route::resource('/status', StatusController::class);
     });

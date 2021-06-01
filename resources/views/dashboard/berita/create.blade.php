@@ -6,7 +6,7 @@
   <div class="col-12">
     <div class="card shadow">
       <div class="card-body">
-        <form action="{{ route('berita.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('authorberita.store') }}" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="form-row">
             <div class="form-group col-12 col-lg-6">
@@ -60,7 +60,7 @@
               <p class="text-danger">{{ $message }}</p>
             @enderror
           </div>
-          <a href="{{ route('berita.index') }}" class="btn btn-warning">Kembali</a>
+          <a href="{{ route('authorberita.index') }}" class="btn btn-warning">Kembali</a>
           <button type="submit" class="btn btn-primary">Tulis Berita</button>
         </form>
       </div>

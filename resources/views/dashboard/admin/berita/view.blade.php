@@ -54,7 +54,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item pr-4">
-          <a class="nav-link" href="{{ route('authorberita.index') }}">Home</a>
+          <a class="nav-link" href="{{ route('adminberita.index') }}">Home</a>
         </li>
         <li class="nav-item pr-4">
           <a class="nav-link" href="#">TVRI News</a>
@@ -83,7 +83,7 @@
       <nav aria-label="breadcrumb">
         <div class="container">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('authorberita.index') }}">News</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('adminberita.index') }}">News</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ $news->slug }}</li>
           </ol>
         </div>

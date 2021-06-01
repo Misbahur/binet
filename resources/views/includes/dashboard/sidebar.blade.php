@@ -23,6 +23,12 @@
           <span>Kategori Berita</span>
         </a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ route('adminberita.index') }}">
+          <i class="fas fa-fw fa-newspaper"></i>
+          <span>Berita</span>
+        </a>
+      </li>
     @elseif(Auth::user()->role == "Author")
       <!-- Nav Item - Author -->
       <li class="nav-item active">
@@ -32,7 +38,7 @@
         </a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="{{ route('berita.index') }}">
+        <a class="nav-link" href="{{ route('authorberita.index') }}">
           <i class="fas fa-fw fa-newspaper"></i>
           <span>Berita</span>
         </a>

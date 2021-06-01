@@ -6,7 +6,7 @@
   <div class="col-12">
     <div class="card shadow">
       <div class="card-body">
-        <form action="{{ route('authorberita.update', $news->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('adminberita.update', $news->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
           @method('put')
           <input type="hidden" name="thumbnailLama" value="{{ $news->thumbnail }}">
@@ -28,7 +28,7 @@
             </div>
             <div class="form-group col-lg-3">
               <label for="preview">Preview Thumbnail</label>
-              <img id="previewThumbnail" src="{{ url('/storage/thumbnail/', $news->thumbnail) ?? '' }}" width="180px" height="100px">
+              <img id="previewThumbnail" src="{{ url('/storage/thumbnail', $news->thumbnail) ?? '' }}" width="180px" height="100px">
             </div>
           </div>
           <div class="form-row">
@@ -57,7 +57,7 @@
             </div>
             <div class="form-group col-lg-3">
               <label for="preview">Preview Banner</label>
-              <img id="previewBanner" src="{{ url('/storage/banner/', $news->banner) ?? '' }}" width="180px" height="100px">
+              <img id="previewBanner" src="{{ url('/storage/banner', $news->banner) ?? '' }}" width="180px" height="100px">
             </div>
           </div>
           <div class="form-group">
@@ -67,7 +67,7 @@
               <p class="text-danger">{{ $message }}</p>
             @enderror
           </div>
-          <a href="{{ route('authorberita.index') }}" class="btn btn-warning">Kembali</a>
+          <a href="{{ route('adminberita.index') }}" class="btn btn-warning">Kembali</a>
           <button type="submit" class="btn btn-primary">Edit Berita</button>
         </form>
       </div>

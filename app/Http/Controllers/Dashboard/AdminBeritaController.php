@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Category;
-use App\Models\Status;
 use App\Models\News;
+use App\Models\User;
+use App\Models\Status;
+use App\Models\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 
-class BeritaController extends Controller
+class AdminBeritaController extends Controller
 {
     public function __construct()
     {
@@ -19,14 +20,14 @@ class BeritaController extends Controller
 
     public function index()
     {
-        $news = News::where('user_id', Auth::user()->id)->with(['status'])->orderByDesc('created_at')->get();
-        return view('dashboard.berita.berita', compact('news'));
+        $users = User::with(['news'])->get();
+        return view('dashboard.admin.berita.berita', compact('users'));
     }
 
     public function create()
     {
         $categories = Category::all();
-        return view('dashboard.berita.create', compact('categories'));
+        return view('dashboard.admin.berita.create', compact('categories'));
     }
 
     public function store(Request $request)
@@ -62,20 +63,20 @@ class BeritaController extends Controller
             'news_id' => $news->id,
         ]);
 
-        return redirect()->route('authorberita.index')->with('alert', 'Berita Berhasil Ditulis');
+        return redirect()->route('adminberita.index')->with('alert', 'Berita Berhasil Ditulis');
     }
 
     public function show($id)
     {
-        $news = News::find($id);
-        return view('dashboard.berita.view', compact('news'));
+        $users = User::with(['news'])->find($id);
+        return view('dashboard.admin.berita.detail', compact('users'));
     }
 
     public function edit($id)
     {
         $news = News::find($id);
         $categories = Category::all();
-        return view('dashboard.berita.edit', compact('news', 'categories'));
+        return view('dashboard.admin.berita.edit', compact('news', 'categories'));
     }
 
     public function update(Request $request, $id)
@@ -113,7 +114,7 @@ class BeritaController extends Controller
             'kategori' => $request->kategori,
         ]);
 
-        return redirect()->route('authorberita.index')->with('alert', 'Berita Berhasil Diedit');
+        return redirect()->route('adminberita.index')->with('alert', 'Berita Berhasil Diedit');
     }
 
     public function destroy($id)
@@ -121,6 +122,12 @@ class BeritaController extends Controller
         News::find($id)->delete();
         Status::where('news_id', $id)->delete();
         
-        return redirect()->route('authorberita.index')->with('alert', 'Berita Berhasil Dihapus');
+        return redirect()->route('adminberita.index')->with('alert', 'Berita Berhasil Dihapus');
+    }
+
+    public function view($id)
+    {
+        $news = News::find($id);
+        return view('dashboard.admin.berita.view', compact('news'));
     }
 }

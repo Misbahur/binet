@@ -6,7 +6,7 @@
     <h1 class="h3 text-gray-800">Daftar Berita</h1>
     <div class="row">
       <div class="col-12 col-lg-6">
-        <a href="{{ route('berita.create') }}" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Tulis Berita</a>
+        <a href="{{ route('authorberita.create') }}" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Tulis Berita</a>
       </div>
       <div class="col-12 col-lg-6">
         @if (session('alert'))
@@ -46,9 +46,9 @@
             <td>{{ $news->kategori }}</td>
             <td>{{ $news->status->status }}</td>
             <td>
-              <a href="{{ route('berita.show', $news->id) }}" class="btn btn-success m-1"><i class="fas fa-eye"></i></a>
-              <a href="{{ route('berita.edit', $news->id) }}" class="btn btn-info  m-1"><i class="fas fa-edit"></i></a>
-              <form action="{{ route('berita.destroy', $news->id) }}" method="POST" class="d-inline">
+              <a href="{{ route('authorberita.show', $news->id) }}" class="btn btn-success m-1"><i class="fas fa-eye"></i></a>
+              <a href="{{ route('authorberita.edit', $news->id) }}" class="btn btn-info  m-1"><i class="fas fa-edit"></i></a>
+              <form action="{{ route('authorberita.destroy', $news->id) }}" method="POST" class="d-inline">
                 @csrf
                 @method('delete')
                 <button type="submit" class="btn btn-danger m-1"><i class="fas fa-trash"></i></button>

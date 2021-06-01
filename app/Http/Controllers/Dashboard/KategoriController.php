@@ -8,15 +8,20 @@ use Illuminate\Http\Request;
 
 class KategoriController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $categories = Category::all();
-        return view('dashboard.kategori.kategori', compact('categories'));
+        return view('dashboard.admin.kategori.kategori', compact('categories'));
     }
 
     public function create()
     {
-        return view('dashboard.kategori.create');
+        return view('dashboard.admin.kategori.create');
     }
 
     public function store(Request $request)
@@ -33,7 +38,7 @@ class KategoriController extends Controller
     public function edit($id)
     {
         $category = Category::find($id);
-        return view('dashboard.kategori.edit', compact('category'));
+        return view('dashboard.admin.kategori.edit', compact('category'));
     }
 
     public function update(Request $request, $id)
