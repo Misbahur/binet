@@ -10,6 +10,7 @@ use App\Http\Controllers\Dashboard\KategoriController;
 use App\Http\Controllers\Dashboard\BeritaController;
 use App\Http\Controllers\Dashboard\StatusController;
 use App\Http\Controllers\Dashboard\AdminBeritaController;
+use App\Http\Controllers\Dashboard\AdminStatusBeritaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,8 @@ Route::prefix('/dashboard')
         Route::view('/profile', 'dashboard.profile.profil');
         Route::resource('/kategori', KategoriController::class);
         Route::resource('/adminberita', AdminBeritaController::class);
-        Route::get('/adminberita/view/{id}', [AdminBeritaController::class, 'view']);
+        Route::get('/adminberita/preview/{id}', [AdminBeritaController::class, 'view'])->name('adminberita.preview');
         Route::resource('/authorberita', BeritaController::class);
-        Route::resource('/status', StatusController::class);
+        Route::resource('/adminstatus', AdminStatusBeritaController::class);
+        Route::resource('/authorstatus', StatusController::class);
     });

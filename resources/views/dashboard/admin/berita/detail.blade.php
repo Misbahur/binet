@@ -37,7 +37,7 @@
                         <td>{{ $news->status->status }}</td>
                         <td>
                           <a href="{{ route('adminberita.edit', $news->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
-                          <a href="view/{{ $news->id }}" class="btn btn-success"><i class="fas fa-eye"></i></a>
+                          <a href="{{ route('adminberita.preview', $news->id) }}" class="btn btn-success"><i class="fas fa-eye"></i></a>
                           <form action="{{ route('adminberita.destroy', $news->id) }}" method="POST" class="d-inline">
                             @csrf
                             @method('delete')

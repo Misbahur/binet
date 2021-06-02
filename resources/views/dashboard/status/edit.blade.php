@@ -6,7 +6,7 @@
   <div class="col-12 col-lg-6">
     <div class="card shadow">
       <div class="card-body">
-        <form action="{{ route('status.update', $status->id) }}" method="POST">
+        <form action="{{ route('authorstatus.update', $status->id) }}" method="POST">
           @csrf
           @method('put')
           <div class="form-group">
@@ -24,7 +24,7 @@
               <p class="text-danger">{{ $message }}</p>
             @enderror
           </div>
-          <a href="{{ route('status.index') }}" class="btn btn-warning">Kembali</a>
+          <a href="{{ route('authorstatus.index') }}" class="btn btn-warning">Kembali</a>
           <button type="submit" class="btn btn-primary">Edit Status Post</button>
         </form>
       </div>

@@ -6,19 +6,13 @@ use App\Models\News;
 use App\Models\Status;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class StatusController extends Controller
+class AdminStatusBeritaController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
-        $statuses = News::where('user_id', Auth::user()->id)->with(['status'])->orderByDesc('created_at')->get();
-        return view('dashboard.status.status', compact('statuses'));
+        $statuses = News::orderByDesc('created_at')->get();
+        return view('dashboard.admin.status.status', compact('statuses'));
     }
 
     public function edit($id)
@@ -40,6 +34,6 @@ class StatusController extends Controller
             'tgl' => $tgl,
         ]);
 
-        return redirect()->route('authorstatus.index')->with('alert', 'Status Post Berita Berhasil Diupdate');
+        return redirect()->route('adminstatus.index')->with('alert', 'Status Post Berita Berhasil Diupdate');
     }
 }
