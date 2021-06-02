@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Models\Category;
 use App\Models\Status;
 use App\Models\News;
+use App\Models\HotNews;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -57,6 +58,10 @@ class BeritaController extends Controller
             'user_id' => Auth::user()->id,
         ]);
 
+        if($request->kategori == 'Hot News') {
+            HotNews::create(['news_id' => $news->id]);
+        }
+
         Status::create([
             'status' => 'Pending',
             'news_id' => $news->id,
@@ -104,7 +109,7 @@ class BeritaController extends Controller
             $request->banner->move(public_path('/storage/banner'), $namaFileBanner);
         }
 
-        News::find($id)->update([
+        $news = News::find($id)->update([
             'judul' => $request->judul,
             'slug' => Str::slug($request->judul),
             'thumbnail' => $namaFileThumbnail,
@@ -112,6 +117,15 @@ class BeritaController extends Controller
             'berita' => $request->berita,
             'kategori' => $request->kategori,
         ]);
+
+        $kategori = News::find($id);
+        $hotNews = HotNews::where('news_id', $kategori->id)->get();
+
+        if($hotNews && $kategori->kategori != 'Hot News') {
+            HotNews::where('news_id', $kategori->id)->delete();
+        } elseif($hotNews && $kategori->kategori == 'Hot News') {
+            HotNews::create(['news_id' => $kategori->id]);
+        }
 
         return redirect()->route('authorberita.index')->with('alert', 'Berita Berhasil Diedit');
     }

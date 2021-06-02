@@ -6,6 +6,7 @@ use App\Models\News;
 use App\Models\User;
 use App\Models\Status;
 use App\Models\Category;
+use App\Models\HotNews;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -20,7 +21,7 @@ class AdminBeritaController extends Controller
 
     public function index()
     {
-        $users = User::with(['news'])->get();
+        $users = User::with(['news'])->orderByDesc('created_at')->get();
         return view('dashboard.admin.berita.berita', compact('users'));
     }
 
@@ -57,6 +58,10 @@ class AdminBeritaController extends Controller
             'kategori' => $request->kategori,
             'user_id' => Auth::user()->id,
         ]);
+
+        if($request->kategori == 'Hot News') {
+            HotNews::create(['news_id' => $news->id]);
+        }
 
         Status::create([
             'status' => 'Pending',
@@ -105,7 +110,7 @@ class AdminBeritaController extends Controller
             $request->banner->move(public_path('/storage/banner'), $namaFileBanner);
         }
 
-        News::find($id)->update([
+        $news = News::find($id)->update([
             'judul' => $request->judul,
             'slug' => Str::slug($request->judul),
             'thumbnail' => $namaFileThumbnail,
@@ -113,6 +118,15 @@ class AdminBeritaController extends Controller
             'berita' => $request->berita,
             'kategori' => $request->kategori,
         ]);
+        
+        $kategori = News::find($id);
+        $hotNews = HotNews::where('news_id', $kategori->id)->get();
+
+        if($hotNews && $kategori->kategori != 'Hot News') {
+            HotNews::where('news_id', $kategori->id)->delete();
+        } elseif($hotNews && $kategori->kategori == 'Hot News') {
+            HotNews::create(['news_id' => $kategori->id]);
+        }
 
         return redirect()->route('adminberita.index')->with('alert', 'Berita Berhasil Diedit');
     }

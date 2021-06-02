@@ -15,7 +15,7 @@ class KategoriController extends Controller
 
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::orderByDesc('created_at')->get();
         return view('dashboard.admin.kategori.kategori', compact('categories'));
     }
 
