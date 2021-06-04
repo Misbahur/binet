@@ -22,4 +22,9 @@ class News extends Model
     {
         return $this->belongsTo(User::class, 'id');
     }
+
+    public function hotNews()
+    {
+        return $this->hasOne(HotNews::class, 'id');
+    }
 }

@@ -8,11 +8,11 @@
       <div class="row">
         <div class="col-12 col-lg-8 left-content">
           <div class="jumbotron p-0">
-            <img src="/frontend/images/banner.jpg" alt="" class="img-fluid">
+            <img src="{{ url('/storage/thumbnail', $hotNews->news->thumbnail) }}" alt="" class="img-fluid">
             <div class="title-news">
-              <p class="badge badge-danger">Sports</p>
+              <p class="badge badge-danger">{{ $hotNews->news->kategori }}</p>
               <a href="{{ route('view') }}">
-                <h1>Jadwal Kejuaran Asian Games Volly Putri</h1>
+                <h1>{{ $hotNews->news->judul }}</h1>
               </div>
             </a>
           </div>
@@ -22,39 +22,21 @@
             <div class="card-body">
               <div class="news-content">
                 <h3>Berita Terbaru</h3>
-                <div class="media mt-3">
-                  <div class="zoom-effect">
-                    <div class="kotak">
-                      <img src="/frontend/images/food.jpg" class="mr-3 rounded" alt="..." width="100px">
+                @foreach ($newsLimit as $newsL)
+                  @if ($newsL->news->kategori != 'Hot News')
+                    <div class="media mt-3">
+                      <div class="zoom-effect">
+                        <div class="kotak">
+                          <img src="{{ url('/storage/thumbnail', $newsL->news->thumbnail) }}" class="mr-3 rounded" alt="..." width="100px">
+                        </div>
+                      </div>
+                      <div class="media-body">
+                        <p class="m-0">{{ $newsL->news->judul }}</p>
+                        <a href="#">Baca Selengkapnya...</a>
+                      </div>
                     </div>
-                  </div>
-                  <div class="media-body">
-                    <p class="m-0">Will you do the same for me? It's time to face the music</p>
-                    <a href="#">Baca Selengkapnya...</a>
-                  </div>
-                </div>
-                <div class="media mt-3">
-                  <div class="zoom-effect">
-                    <div class="kotak">
-                      <img src="/frontend/images/food.jpg" class="mr-3 rounded" alt="..." width="100px">
-                    </div>
-                  </div>
-                  <div class="media-body">
-                    <p class="m-0">Will you do the same for me? It's time to face the music</p>
-                    <a href="#">Baca Selengkapnya...</a>
-                  </div>
-                </div>
-                <div class="media mt-3">
-                  <div class="zoom-effect">
-                    <div class="kotak">
-                      <img src="/frontend/images/food.jpg" class="mr-3 rounded" alt="..." width="100px">
-                    </div>
-                  </div>
-                  <div class="media-body">
-                    <p class="m-0">Will you do the same for me? It's time to face the music</p>
-                    <a href="#">Baca Selengkapnya...</a>
-                  </div>
-                </div>
+                  @endif
+                @endforeach
               </div>
             </div>
           </div>

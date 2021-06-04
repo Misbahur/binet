@@ -24,7 +24,14 @@
     <div class="flash-news">
       <div class="container">
         <div class="row">
-          <p class="float-left mr-3">Berita Terkini : </p> <p><marquee behavior="left"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. lorem ip</marquee></p>
+          <p class="float-left mr-3">Berita Terkini : </p>
+          <p>
+            <marquee behavior="left" width="1000px">
+              @foreach ($hotNewsLimit as $hotNewsL)
+              ({{ $hotNewsL->news->status->tgl }}) {{ $hotNewsL->news->judul }}..... <a href="{{ route('view') }}" class="text-decoration-none"> Baca Selengkapnya &emsp;&emsp;&emsp;&emsp; </a>
+              @endforeach
+            </marquee>
+          </p>
         </div>
       </div>
     </div>

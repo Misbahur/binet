@@ -11,4 +11,9 @@ class HotNews extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = ['news_id'];
+
+    public function news()
+    {
+        return $this->belongsTo(News::class, 'news_id');
+    }
 }
