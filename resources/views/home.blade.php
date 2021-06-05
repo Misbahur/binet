@@ -23,19 +23,17 @@
               <div class="news-content">
                 <h3>Berita Terbaru</h3>
                 @foreach ($newsLimit as $newsL)
-                  @if ($newsL->news->kategori != 'Hot News')
-                    <div class="media mt-3">
-                      <div class="zoom-effect">
-                        <div class="kotak">
-                          <img src="{{ url('/storage/thumbnail', $newsL->news->thumbnail) }}" class="mr-3 rounded" alt="..." width="100px">
-                        </div>
-                      </div>
-                      <div class="media-body">
-                        <p class="m-0">{{ $newsL->news->judul }}</p>
-                        <a href="#">Baca Selengkapnya...</a>
-                      </div>
+                  <div class="media mt-3">
+                    <div class="zoom-effect">
+                      <div class="kotak">
+                        <img src="{{ url('/storage/thumbnail', $newsL->news->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
+                      </div>  
                     </div>
-                  @endif
+                    <div class="media-body">
+                      <p class="m-0">{{ $newsL->news->judul }}</p>
+                      <a href="#">Baca Selengkapnya...</a>
+                    </div>
+                  </div>
                 @endforeach
               </div>
             </div>
@@ -48,121 +46,22 @@
   <!-- Old News -->
   <div class="old-news pb-5">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-3 col-md-6 mt-3">
-          <div class="card">
-            <div class="zoom-effect">
-              <div class="kotak">
-                <img src="/frontend/images/car.jpg" class="card-img-top rounded mx-auto d-block" alt="...">
+      <div class="row">
+        @foreach ($newsLimitAll as $newsLimitA)
+          <div class="col-12 col-lg-4 col-md-6 mt-3">
+            <div class="media mt-3">
+              <div class="zoom-effect">
+                <div class="kotak">
+                  <img src="{{ url('/storage/thumbnail', $newsLimitA->news->thumbnail) }}" class="mr-3 rounded" alt="Thumbnail">
+                </div>  
+              </div>
+              <div class="media-body">
+                <p class="m-0">{{ $newsLimitA->news->judul }}</p>
+                <a href="#">Baca Selengkapnya...</a>
               </div>
             </div>
-            <div class="card-body">
-              <h4>Sports Cars</h4>
-              <p class="card-text">Some quick example text to build on the</p>
-              <a href="#">Baca Selengkapnya...</a>
-            </div>
           </div>
-        </div>
-        <div class="col-12 col-lg-3 col-md-6 mt-3">
-          <div class="card">
-            <div class="zoom-effect">
-              <div class="kotak">
-                <img src="/frontend/images/car.jpg" class="card-img-top rounded mx-auto d-block" alt="...">
-              </div>
-            </div>
-            <div class="card-body">
-              <h4>Sports Cars</h4>
-              <p class="card-text">Some quick example text to build on the</p>
-              <a href="#">Baca Selengkapnya...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-3 col-md-6 mt-3">
-          <div class="card">
-            <div class="zoom-effect">
-              <div class="kotak">
-                <img src="/frontend/images/car.jpg" class="card-img-top rounded mx-auto d-block" alt="...">
-              </div>
-            </div>
-            <div class="card-body">
-              <h4>Sports Cars</h4>
-              <p class="card-text">Some quick example text to build on the</p>
-              <a href="#">Baca Selengkapnya...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-3 col-md-6 mt-3">
-          <div class="card">
-            <div class="zoom-effect">
-              <div class="kotak">
-                <img src="/frontend/images/car.jpg" class="card-img-top rounded mx-auto d-block" alt="...">
-              </div>
-            </div>
-            <div class="card-body">
-              <h4>Sports Cars</h4>
-              <p class="card-text">Some quick example text to build on the</p>
-              <a href="#">Baca Selengkapnya...</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-3 col-md-6 mt-3">
-          <div class="card">
-            <div class="zoom-effect">
-              <div class="kotak">
-                <img src="/frontend/images/car.jpg" class="card-img-top rounded mx-auto d-block" alt="...">
-              </div>
-            </div>
-            <div class="card-body">
-              <h4>Sports Cars</h4>
-              <p class="card-text">Some quick example text to build on the</p>
-              <a href="#">Baca Selengkapnya...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-3 col-md-6 mt-3">
-          <div class="card">
-            <div class="zoom-effect">
-              <div class="kotak">
-                <img src="/frontend/images/car.jpg" class="card-img-top rounded mx-auto d-block" alt="...">
-              </div>
-            </div>
-            <div class="card-body">
-              <h4>Sports Cars</h4>
-              <p class="card-text">Some quick example text to build on the</p>
-              <a href="#">Baca Selengkapnya...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-3 col-md-6 mt-3">
-          <div class="card">
-            <div class="zoom-effect">
-              <div class="kotak">
-                <img src="/frontend/images/car.jpg" class="card-img-top rounded mx-auto d-block" alt="...">
-              </div>
-            </div>
-            <div class="card-body">
-              <h4>Sports Cars</h4>
-              <p class="card-text">Some quick example text to build on the</p>
-              <a href="#">Baca Selengkapnya...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-lg-3 col-md-6 mt-3">
-          <div class="card">
-            <div class="zoom-effect">
-              <div class="kotak">
-                <img src="/frontend/images/car.jpg" class="card-img-top rounded mx-auto d-block" alt="...">
-              </div>
-            </div>
-            <div class="card-body">
-              <h4>Sports Cars</h4>
-              <p class="card-text">Some quick example text to build on the</p>
-              <a href="#">Baca Selengkapnya...</a>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
   </div>

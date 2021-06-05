@@ -95,17 +95,9 @@ body {
   font-size: 20px;
 }
 
-.old-news .card {
-  background-color: #f2f2f2;
-}
-
-.old-news .card .card-body h4 {
-  font-size: 22px;
-  margin-top: -14px;
-}
-
-.old-news .card .card-body p {
-  margin: 0px;
+.old-news .media .kotak img {
+  height: 150px;
+  width: 150px;
 }
 
 .vidio .title h3 {
@@ -262,16 +254,6 @@ hr {
   transform: scale(1.08);
 }
 
-@media (max-width: 576px) {
-  .old-news .card .card-body h4 {
-    font-size: 18px;
-  }
-  .old-news .card .card-body p,
-  .old-news .card .card-body a {
-    font-size: 14px;
-  }
-}
-
 @media (max-width: 768px) {
   .first-navbar .logo {
     display: block;
@@ -300,16 +282,26 @@ hr {
     height: 200px;
   }
   .banner .jumbotron .title-news {
-    margin-top: -120px;
+    margin-top: -100px;
   }
   .banner .jumbotron .title-news h1 {
     font-size: 20px;
   }
-  .old-news .card .card-body h4 {
+  .banner .news-content p {
+    font-size: 14px;
+  }
+  .banner .news-content a {
+    font-size: 14px;
+  }
+  .old-news .media .kotak img {
+    width: 140px;
+    height: 110px;
+  }
+  .old-news .media .media-body h4 {
     font-size: 20px;
   }
-  .old-news .card .card-body p,
-  .old-news .card .card-body a {
+  .old-news .media .media-body p,
+  .old-news .media .media-body a {
     font-size: 14px;
   }
 }
@@ -331,20 +323,6 @@ hr {
   }
   .flash-news {
     display: none;
-  }
-  .banner .jumbotron {
-    max-width: 100%;
-    height: 300px;
-  }
-  .banner .jumbotron img {
-    width: 100%;
-    height: 100%;
-  }
-  .banner .jumbotron .title-news {
-    margin-top: -90px;
-  }
-  .banner .jumbotron .title-news h1 {
-    font-size: 24px;
   }
 }
 

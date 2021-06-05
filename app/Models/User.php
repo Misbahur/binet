@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(News::class, 'user_id');
     }
+
+    public function authorStatus()
+    {
+        return $this->hasOne(AuthorStatus::class, 'user_id');
+    }
 }

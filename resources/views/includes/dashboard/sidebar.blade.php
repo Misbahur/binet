@@ -18,6 +18,12 @@
         </a>
       </li>
       <li class="nav-item active">
+        <a class="nav-link" href="{{ route('author.index') }}">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Author</span>
+        </a>
+      </li>
+      <li class="nav-item active">
         <a class="nav-link" href="{{ route('kategori.index') }}">
           <i class="fas fa-fw fa-list"></i>
           <span>Kategori Berita</span>

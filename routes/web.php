@@ -11,6 +11,7 @@ use App\Http\Controllers\Dashboard\BeritaController;
 use App\Http\Controllers\Dashboard\StatusController;
 use App\Http\Controllers\Dashboard\AdminBeritaController;
 use App\Http\Controllers\Dashboard\AdminStatusBeritaController;
+use App\Http\Controllers\Dashboard\AdminAuthorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +38,5 @@ Route::prefix('/dashboard')
         Route::resource('/authorberita', BeritaController::class);
         Route::resource('/adminstatus', AdminStatusBeritaController::class);
         Route::resource('/authorstatus', StatusController::class);
+        Route::resource('/author', AdminAuthorController::class);
     });

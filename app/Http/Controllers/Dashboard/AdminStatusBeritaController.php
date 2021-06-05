@@ -19,7 +19,7 @@ class AdminStatusBeritaController extends Controller
     {
         $status = Status::find($id);
         $statuses = ['Post', 'Pending', 'Cancel Post'];
-        return view('dashboard.status.edit', compact('status', 'statuses'));
+        return view('dashboard.admin.status.edit', compact('status', 'statuses'));
     }
 
     public function update(Request $request, $id)

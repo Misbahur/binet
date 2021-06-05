@@ -3,6 +3,7 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
+use App\Models\AuthorStatus;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
@@ -33,7 +34,7 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
         ])->validate();
 
-        return User::create([
+        $user = User::create([
             'name' => $input['name'],
             'no_hp' => $input['no_hp'],
             'email' => $input['email'],
@@ -41,5 +42,13 @@ class CreateNewUser implements CreatesNewUsers
             'profil' => 'profile-200x200.png',
             'role' => 'Author',
         ]);
+
+        AuthorStatus::create([
+            'status' => 'Pending',
+            'user_id' => $user->id,
+        ]);
+
+        return $user;
+
     }
 }

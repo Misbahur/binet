@@ -13,6 +13,7 @@ class HomeController extends Controller
         $hotNews = HotNews::with(['news'])->latest()->first();
         $hotNewsLimit = HotNews::with(['news'])->limit(3)->get();
         $newsLimit = Status::where('status', 'Post')->orderByDesc('created_at')->limit(3)->get();
-        return view('home', compact('hotNews', 'hotNewsLimit', 'newsLimit'));
+        $newsLimitAll = Status::where('status', 'Post')->orderByDesc('created_at')->offset(3)->limit(30)->get();
+        return view('home', compact('hotNews', 'hotNewsLimit', 'newsLimit', 'newsLimitAll'));
     }
 }

@@ -39,7 +39,7 @@
             <td>{{ $status->status->status }}</td>
             <td>{{ $status->status->hari . ' / ' . $status->status->tgl }}</td>
             <td>
-              <a href="{{ route('authorstatus.edit', $status->status->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
+              <a href="{{ route('adminstatus.edit', $status->status->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
             </td>
           </tr>
         @endforeach
