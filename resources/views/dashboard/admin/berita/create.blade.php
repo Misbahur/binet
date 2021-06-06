@@ -1,4 +1,4 @@
-@extends('layouts.dashboard.dashboard')
+@extends('layouts.dashboard.admin.dashboard')
 @section('title', 'Tulis Berita')
 @section('content')
 <h1 class="h3 text-gray-800">Tulis Berita</h1>
@@ -60,7 +60,7 @@
               <p class="text-danger">{{ $message }}</p>
             @enderror
           </div>
-          <a href="{{ route('authorberita.index') }}" class="btn btn-warning">Kembali</a>
+          <a href="{{ route('adminberita.index') }}" class="btn btn-warning">Kembali</a>
           <button type="submit" class="btn btn-primary">Tulis Berita</button>
         </form>
       </div>

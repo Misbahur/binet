@@ -1,4 +1,4 @@
-@extends('layouts.dashboard.dashboard')
+@extends('layouts.dashboard.author.dashboard')
 @section('title', 'Edit Status Post Berita')
 @section('content')
 <h1 class="h3 text-gray-800">Edit Status Post</h1>

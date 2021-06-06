@@ -1,4 +1,4 @@
-@extends('layouts.dashboard.dashboard')
+@extends('layouts.dashboard.author.dashboard')
 @section('title', 'Profile Author')
 @section('content')
 <div class="card shadow">
@@ -48,7 +48,7 @@
               <p class="text-danger">{{ $message }}</p>
             @enderror
           </div>
-          <a href="{{ route('dashboard') }}" class="btn btn-warning">Kembali</a>
+          <a href="{{ route('dashboard.author') }}" class="btn btn-warning">Kembali</a>
           <button type="submit" class="btn btn-primary">Ubah</button>
         </form>
       </div>

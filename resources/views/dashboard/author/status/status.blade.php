@@ -1,4 +1,4 @@
-@extends('layouts.dashboard.dashboard')
+@extends('layouts.dashboard.author.dashboard')
 @section('title', 'Status Post Berita')
 @section('content')
 <div class="row justify-content-center">

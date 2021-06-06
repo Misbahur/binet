@@ -21,13 +21,13 @@ class BeritaController extends Controller
     public function index()
     {
         $news = News::where('user_id', Auth::user()->id)->with(['status'])->orderByDesc('created_at')->get();
-        return view('dashboard.berita.berita', compact('news'));
+        return view('dashboard.author.berita.berita', compact('news'));
     }
 
     public function create()
     {
         $categories = Category::all();
-        return view('dashboard.berita.create', compact('categories'));
+        return view('dashboard.author.berita.create', compact('categories'));
     }
 
     public function store(Request $request)
@@ -73,14 +73,14 @@ class BeritaController extends Controller
     public function show($id)
     {
         $news = News::find($id);
-        return view('dashboard.berita.view', compact('news'));
+        return view('dashboard.author.berita.view', compact('news'));
     }
 
     public function edit($id)
     {
         $news = News::find($id);
         $categories = Category::all();
-        return view('dashboard.berita.edit', compact('news', 'categories'));
+        return view('dashboard.author.berita.edit', compact('news', 'categories'));
     }
 
     public function update(Request $request, $id)

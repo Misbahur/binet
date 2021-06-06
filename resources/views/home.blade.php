@@ -79,7 +79,7 @@
           <h3>Mari Tonton Vidio Kami Juga</h3>
         </div>
       </div>
-      <div class="row mt-3 justify-content-center">
+      {{-- <div class="row mt-3 justify-content-center">
         <div class="col-12 col-md-6 pt-3">
           <div class="vidio-frame">
             <div class="embed-responsive embed-responsive-16by9 rounded">
@@ -122,7 +122,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
 
       <div class="row mt-4 justify-content-center">
         <a href="#" class="btn btn-load-more">LIHAT LEBIH BANYAK >></a>

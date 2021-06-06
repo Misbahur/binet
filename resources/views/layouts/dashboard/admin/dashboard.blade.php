@@ -33,7 +33,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    @include('includes.dashboard.sidebar')
+    @include('includes.dashboard.admin.sidebar')
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -43,7 +43,7 @@
       <div id="content">
 
         <!-- Topbar -->
-        @include('includes.dashboard.navbar')
+        @include('includes.dashboard.admin.navbar')
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
@@ -58,7 +58,7 @@
       <!-- End of Main Content -->
 
       <!-- Footer -->
-      @include('includes.dashboard.footer')
+      @include('includes.dashboard.admin.footer')
       <!-- End of Footer -->
 
     </div>
@@ -73,7 +73,7 @@
   </a>
 
   <!-- Logout Modal-->
-  @include('includes.dashboard.modal')
+  @include('includes.dashboard.admin.modal')
 
   <!-- Bootstrap core JavaScript-->
   <script src="{{ url('frontend/library/sbadmin/vendor/jquery/jquery.min.js') }}"></script>

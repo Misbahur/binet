@@ -18,14 +18,14 @@ class StatusController extends Controller
     public function index()
     {
         $statuses = News::where('user_id', Auth::user()->id)->with(['status'])->orderByDesc('created_at')->get();
-        return view('dashboard.status.status', compact('statuses'));
+        return view('dashboard.author.status.status', compact('statuses'));
     }
 
     public function edit($id)
     {
         $status = Status::find($id);
         $statuses = ['Post', 'Pending', 'Cancel Post'];
-        return view('dashboard.status.edit', compact('status', 'statuses'));
+        return view('dashboard.author.status.edit', compact('status', 'statuses'));
     }
 
     public function update(Request $request, $id)
