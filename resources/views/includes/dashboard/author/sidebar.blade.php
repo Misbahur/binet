@@ -27,6 +27,12 @@
       <span>Status</span>
     </a>
   </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="{{ route('authorvidio.index') }}">
+      <i class="fas fa-fw fa-video"></i>
+      <span>Vidio</span>
+    </a>
+  </li>
   <!-- Divider -->
   <hr class="sidebar-divider">
   <!-- Sidebar Toggler (Sidebar) -->

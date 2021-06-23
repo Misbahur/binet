@@ -8,13 +8,14 @@ use App\Http\Controllers\ViewController;
 // Admin
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\KategoriController;
-use App\Http\Controllers\Dashboard\BeritaController;
-use App\Http\Controllers\Dashboard\StatusController;
 use App\Http\Controllers\Dashboard\AdminBeritaController;
 use App\Http\Controllers\Dashboard\AdminStatusBeritaController;
 use App\Http\Controllers\Dashboard\AdminAuthorController;
 // Author
 use App\Http\Controllers\Dashboard\AuthorDashboardController;
+use App\Http\Controllers\Dashboard\BeritaController;
+use App\Http\Controllers\Dashboard\StatusController;
+use App\Http\Controllers\Dashboard\AuthorVidioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,4 +51,5 @@ Route::prefix('/admin')
         Route::view('/profile', 'dashboard.author.profile.profil');
         Route::resource('/authorberita', BeritaController::class);
         Route::resource('/authorstatus', StatusController::class);
+        Route::resource('/authorvidio', AuthorVidioController::class);
       });

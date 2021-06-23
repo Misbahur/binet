@@ -90,6 +90,7 @@
 
   {{-- Summernote --}}
   <script src="{{ url('/frontend/library/summernote/summernote-lite.min.js') }}"></script>
+  <script src="summernote-video-attributes.js"></script>
   
   <script>
     //Datatables
@@ -117,20 +118,34 @@
     };
 
     // Summernote
+    // $('#berita').summernote({
+    //   placeholder: 'Ada berita apa hari ini??',
+    //   tabsize: 2,
+    //   height: 400,
+    //   toolbar: [
+    //     ['style', ['style']],
+    //     ['font', ['bold', 'underline', 'clear']],
+    //     ['color', ['color']],
+    //     ['para', ['ul', 'ol', 'paragraph']],
+    //     ['table', ['table']],
+    //     ['insert', ['link', 'picture', 'video', 'videoAttributes', 'media']],
+    //     ['view', ['fullscreen', 'codeview', 'help']]
+    //   ]
+    // });
+
     $('#berita').summernote({
-      placeholder: 'Ada berita apa hari ini??',
-      tabsize: 2,
-      height: 400,
-      toolbar: [
-        ['style', ['style']],
-        ['font', ['bold', 'underline', 'clear']],
-        ['color', ['color']],
-        ['para', ['ul', 'ol', 'paragraph']],
-        ['table', ['table']],
-        ['insert', ['link', 'picture', 'video', 'videoAttributes', 'media']],
-        ['view', ['fullscreen', 'codeview', 'help']]
-      ]
-    });
+        tabsize: 2,
+        height: 400,
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video', 'videoAttributes', 'media']],
+          ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+      });
 
   </script>
 
