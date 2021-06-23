@@ -327,6 +327,41 @@ hr {
   }
 }
 
+// Iklan
+.top-iklan {
+  img {
+    width: 695px;
+    height: 120px;
+  }
+}
+
+.left-iklan {
+  position: relative;
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 145px;
+  }
+}
+.right-iklan {
+  position: relative;
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    width: 145px;
+  }
+}
+
+.middle-iklan-right {
+  img {
+    width: 325px;
+  }
+}
+
 @media (max-width: 768px) {
   .first-navbar {
     .logo {
@@ -408,6 +443,20 @@ hr {
       }
     }
   }
+
+  .left-iklan {
+    img {
+      display: none;
+    }
+  }
+  .right-iklan {
+    img {
+      display: none;
+    }
+  }
+  .middle-iklan-right {
+    display: none;
+  }
 }
 
 @media (max-width: 992px) {
@@ -446,5 +495,23 @@ hr {
 @media (max-width: 1200px) {
   .flash-news {
     display: none;
+  }
+
+  .top-iklan {
+    img {
+      width: 515px;
+      height: 120px;
+    }
+  }
+
+  .left-iklan {
+    img {
+      margin-left: -74px;
+    }
+  }
+  .right-iklan {
+    img {
+      margin-right: -74px;
+    }
   }
 }

@@ -2,10 +2,18 @@
 @section('title', 'TVRI (Televisi Republik Indonesia)')
 
 @section('content')
+  {{-- Iklan --}}
+  <div class="left-iklan mt-2">
+    <img src="{{ url('/storage/iklan/left-iklan.jpg') }}" alt="Iklan">
+  </div>
+  <div class="right-iklan mt-2">
+    <img src="{{ url('/storage/iklan/left-iklan.jpg') }}" alt="Iklan">
+  </div>
+
   <!-- Hots News -->
   <div class="banner mt-4">
     <div class="container">
-      <div class="row">
+      <div class="row mr-lg-3 ml-lg-3">
         <div class="col-12 col-lg-8 left-content">
           <div class="jumbotron p-0">
             <img src="{{ url('/storage/thumbnail', $hotNews->news->thumbnail) }}" alt="" class="img-fluid">
@@ -46,7 +54,7 @@
   <!-- Old News -->
   <div class="old-news pb-5">
     <div class="container">
-      <div class="row">
+      <div class="row mr-lg-3 ml-lg-3">
         @foreach ($newsLimitAll as $newsLimitA)
           <div class="col-12 col-lg-4 col-md-6 mt-3">
             <div class="media mt-3">
@@ -62,24 +70,29 @@
             </div>
           </div>
         @endforeach
+        <div class="col-12 col-lg-4 col-md-6">
+          <div class="middle-iklan-right">
+            <img src="{{ url('/storage/iklan/middle-iklan-right.jpg') }}" alt="">
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Hr -->
   <div class="container mt-5 mb-5">
-    <hr>
+    <hr class="mr-lg-3 ml-lg-3">
   </div>
 
   <!-- vidio -->
   <div class="vidio">
     <div class="container">
-      <div class="row title">
+      <div class="row mr-lg-3 ml-lg-3 title">
         <div class="col-12">
           <h3>Mari Tonton Vidio Kami Juga</h3>
         </div>
       </div>
-      {{-- <div class="row mt-3 justify-content-center">
+      {{-- <div class="row mr-lg-3 ml-lg-3 mt-3 justify-content-center">
         <div class="col-12 col-md-6 pt-3">
           <div class="vidio-frame">
             <div class="embed-responsive embed-responsive-16by9 rounded">

@@ -13,6 +13,7 @@ use App\Http\Controllers\Dashboard\StatusController;
 use App\Http\Controllers\Dashboard\AdminBeritaController;
 use App\Http\Controllers\Dashboard\AdminStatusBeritaController;
 use App\Http\Controllers\Dashboard\AdminAuthorController;
+use App\Http\Controllers\Dashboard\IklanController;
 // Author
 use App\Http\Controllers\Dashboard\AuthorDashboardController;
 
@@ -42,6 +43,7 @@ Route::prefix('/admin')
         Route::get('/adminberita/preview/{id}', [AdminBeritaController::class, 'view'])->name('adminberita.preview');
         Route::resource('/adminstatus', AdminStatusBeritaController::class);
         Route::resource('/author', AdminAuthorController::class);
+        Route::resource('/iklan', IklanController::class);
       });
       
       Route::prefix('/author')

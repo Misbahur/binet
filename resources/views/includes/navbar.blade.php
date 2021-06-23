@@ -9,6 +9,9 @@
     </button>
   
     <div class="collapse navbar-collapse small" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mr-auto top-iklan text-center">
+        <img src="{{ url('/storage/iklan/top-iklan.jpg') }}" alt="">
+      </ul>
       <ul class="navbar-nav ml-auto">
         @if (Route::has('login'))
           @auth
