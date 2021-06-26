@@ -1,9 +1,9 @@
 @extends('layouts.dashboard.author.dashboard')
-@section('title', 'Status Post Berita')
+@section('title', 'Video')
 @section('content')
 <div class="row justify-content-center">
   <div class="col-12">
-    <h1 class="h3 text-gray-800">Status Post Berita</h1>
+    <h1 class="h3 text-gray-800">Upload Video</h1>
     @if (!Auth::user()->alamat)
     <div class="row">
       <div class="col-12">
@@ -15,6 +15,7 @@
     @endif
     <div class="row">
       <div class="col-12 col-lg-6">
+        <a href="{{ route('authorvidio.create') }}" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Upload Video</a>
       </div>
       <div class="col-12 col-lg-6">
         @if (session('alert'))
@@ -31,9 +32,9 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>Judul Berita</th>
-          <th>Status</th>
-          <th>Hari / Tgl Upload</th>
+          <th>Judul</th>
+          <th>Slug</th>
+          <th>Thumbnail</th>
           <th>Aksi</th>
         </tr>
       </thead>
@@ -41,14 +42,22 @@
         @php
           $i = 1;
         @endphp
-        @foreach ($statuses as $status)
+        @foreach ($videos as $video)
           <tr>
             <th>{{ $i++ }}</th>
-            <td>{{ $status->judul }}</td>
-            <td>{{ $status->status->status }}</td>
-            <td>{{ $status->status->hari . ' / ' . $status->status->tgl }}</td>
+            <td>{{ $video->judul }}</td>
+            <td>{{ $video->slug }}</td>
             <td>
-              <a href="{{ route('authorstatus.edit', $status->status->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
+              <img src="{{ url('/storage/video/thumbnail', $video->thumbnail) }}" alt="Thumbnail" width="120px">
+            </td>
+            <td>
+              <a href="{{ route('authorvidio.edit', $video->id) }}" class="btn btn-info"><i class="fas fa-edit"></i></a>
+              <a href="{{ route('authorvidio.show', $video->id) }}" class="btn btn-success"><i class="fas fa-eye"></i></a>
+              <form action="{{ route('authorvidio.destroy', $video->id) }}" method="POST" class="d-inline">
+                @csrf
+                @method('delete')
+                <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
+              </form>
             </td>
           </tr>
         @endforeach
