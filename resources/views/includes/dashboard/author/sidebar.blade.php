@@ -10,29 +10,56 @@
   <hr class="sidebar-divider my-0">
   <!-- Nav Item - Dashboard -->
   <li class="nav-item active">
-    <a class="nav-link" href="{{ route('dashboard.author') }}">
+    <a class="nav-link" href="#">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Dashboard Author</span>
     </a>
   </li>
-  <li class="nav-item active">
-    <a class="nav-link" href="{{ route('authorberita.index') }}">
-      <i class="fas fa-fw fa-newspaper"></i>
-      <span>Berita</span>
-    </a>
-  </li>
-  <li class="nav-item active">
-    <a class="nav-link" href="{{ route('authorstatus.index') }}">
-      <i class="fas fa-fw fa-upload"></i>
-      <span>Status</span>
-    </a>
-  </li>
-  <li class="nav-item active">
-    <a class="nav-link" href="{{ route('authorvidio.index') }}">
-      <i class="fas fa-fw fa-video"></i>
-      <span>Vidio</span>
-    </a>
-  </li>
+  @if (!Auth::user()->alamat)
+    <li class="nav-item active">
+      <a class="nav-link" href="#">
+        <i class="fas fa-fw fa-newspaper"></i>
+        <span>Berita</span>
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="#">
+        <i class="fas fa-fw fa-upload"></i>
+        <span>Status</span>
+      </a>
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" href="#">
+        <i class="fas fa-fw fa-video"></i>
+        <span>Vidio</span>
+      </a>
+    </li>
+    @else
+      <li class="nav-item active">
+        <a id="anchor" class="nav-link" href="{{ route('dashboard.author') }}">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard Author</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ route('authorberita.index') }}">
+          <i class="fas fa-fw fa-newspaper"></i>
+          <span>Berita</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ route('authorstatus.index') }}">
+          <i class="fas fa-fw fa-upload"></i>
+          <span>Status</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ route('authorvidio.index') }}">
+          <i class="fas fa-fw fa-video"></i>
+          <span>Vidio</span>
+        </a>
+      </li>
+  @endif
   <!-- Divider -->
   <hr class="sidebar-divider">
   <!-- Sidebar Toggler (Sidebar) -->

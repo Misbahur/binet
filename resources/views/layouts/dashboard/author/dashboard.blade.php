@@ -18,6 +18,9 @@
   {{-- Summernote --}}
   <link rel="stylesheet" href="{{ url('/frontend/library/summernote/summernote-lite.min.css') }}">
 
+  {{-- Plyr --}}
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+
   <!-- Custom fonts for this template-->
   <link href="{{ url('frontend/library/sbadmin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -48,7 +51,11 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
+          @if (!Auth::user())
+            @php
+              return redirect()->route('login');
+            @endphp
+          @endif
           @yield('content')
 
         </div>
@@ -90,7 +97,9 @@
 
   {{-- Summernote --}}
   <script src="{{ url('/frontend/library/summernote/summernote-lite.min.js') }}"></script>
-  <script src="summernote-video-attributes.js"></script>
+
+  {{-- Plyr --}}
+  <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
   
   <script>
     //Datatables
@@ -104,7 +113,7 @@
       oFReader.readAsDataURL(document.getElementById("thumbnail").files[0]);
       oFReader.onload = function (oFREvent)
       {
-          document.getElementById("previewThumbnail").src = oFREvent.target.result;
+        document.getElementById("previewThumbnail").src = oFREvent.target.result;
       };
     };
 
@@ -113,39 +122,28 @@
       oFReader.readAsDataURL(document.getElementById("banner").files[0]);
       oFReader.onload = function (oFREvent)
       {
-          document.getElementById("previewBanner").src = oFREvent.target.result;
+        document.getElementById("previewBanner").src = oFREvent.target.result;
       };
     };
 
     // Summernote
-    // $('#berita').summernote({
-    //   placeholder: 'Ada berita apa hari ini??',
-    //   tabsize: 2,
-    //   height: 400,
-    //   toolbar: [
-    //     ['style', ['style']],
-    //     ['font', ['bold', 'underline', 'clear']],
-    //     ['color', ['color']],
-    //     ['para', ['ul', 'ol', 'paragraph']],
-    //     ['table', ['table']],
-    //     ['insert', ['link', 'picture', 'video', 'videoAttributes', 'media']],
-    //     ['view', ['fullscreen', 'codeview', 'help']]
-    //   ]
-    // });
-
     $('#berita').summernote({
-        tabsize: 2,
-        height: 400,
-        toolbar: [
-          ['style', ['style']],
-          ['font', ['bold', 'underline', 'clear']],
-          ['color', ['color']],
-          ['para', ['ul', 'ol', 'paragraph']],
-          ['table', ['table']],
-          ['insert', ['link', 'picture', 'video', 'videoAttributes', 'media']],
-          ['view', ['fullscreen', 'codeview', 'help']]
-        ]
-      });
+      placeholder: 'Ada berita apa hari ini??',
+      tabsize: 2,
+      height: 300,
+      toolbar: [
+        ['style', ['style']],
+        ['font', ['bold', 'underline', 'clear']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['table', ['table']],
+        ['insert', ['link', 'picture', 'video', 'videoAttributes', 'media']],
+        ['view', ['fullscreen', 'codeview', 'help']]
+      ]
+    });
+
+    // Plyr
+    const player = new Plyr(document.getElementById('video'));
 
   </script>
 

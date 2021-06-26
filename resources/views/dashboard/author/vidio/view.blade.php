@@ -98,17 +98,20 @@
           <div class="col-12 col-lg-8 left-content">
             <div class="main-news">
               <div class="main-image">
-                <div class="plyr__video-embed" id="player">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/TxWsQC3_FUU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                  <br>
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/m_R1M54s_ww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+                <div class="plyr__video-embed" id="video">
+                  <iframe
+                    src="https://www.youtube.com/embed/{{ $video->url }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                    allowfullscreen
+                    allowtransparency
+                    allow="autoplay"
+                    ></iframe>
+                  </div>              
               </div>
               <div class="main-title text-center mt-3">
                 <h1>{{ $video->judul }}</h1>
               </div>
               <div class="main-full-news pt-3">
-                {{ $video->deskripsi }}
+                {!! $video->deskripsi !!}
               </div>
             </div>
           </div>
@@ -117,17 +120,6 @@
               <div class="card-body">
                 <div class="news-content">
                   <h3>Berita Terbaru</h3>
-                  <div class="media mt-3">
-                    <div class="zoom-effect">
-                      <div class="kotak">
-                        <img src="/frontend/images/food.jpg" class="mr-3 rounded" alt="..." width="100px">
-                      </div>
-                    </div>
-                    <div class="media-body">
-                      <p class="m-0">Will you do the same for me? It's time to face the music</p>
-                      <a href="#">Baca Selengkapnya...</a>
-                    </div>
-                  </div>
                   <div class="media mt-3">
                     <div class="zoom-effect">
                       <div class="kotak">

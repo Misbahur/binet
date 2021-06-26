@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
+use Illuminate\Support\Str;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 {
@@ -33,7 +34,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         ])->validateWithBag('updateProfileInformation');
 
         $profil = $input['profil'];
-        $nameProfil = 'profil' . '-' . date('d-m-Y') . '-' . $profil->getClientOriginalName();
+        $nameProfil = Str::random(30) . '.' . $profil->getClientOriginalExtension();
         $profil->move(public_path('/storage/profil'), $nameProfil);
 
         if ($input['email'] !== $user->email &&

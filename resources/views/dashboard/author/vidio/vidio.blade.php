@@ -4,6 +4,15 @@
 <div class="row justify-content-center">
   <div class="col-12">
     <h1 class="h3 text-gray-800">Upload Video</h1>
+    @if (!Auth::user()->alamat)
+    <div class="row">
+      <div class="col-12">
+        <div class="alert alert-success" role="alert">
+          Selamat datang {{ Auth::user()->name }}, silahkan lengkapi profil  kamu untuk melengkapi syarat sebagai author kami.
+        </div>
+      </div>
+    </div>
+    @endif
     <div class="row">
       <div class="col-12 col-lg-6">
         <a href="{{ route('authorvidio.create') }}" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Upload Video</a>

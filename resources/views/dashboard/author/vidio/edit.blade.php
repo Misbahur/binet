@@ -1,17 +1,19 @@
 @extends('layouts.dashboard.author.dashboard')
-@section('title', 'Upload Video')
+@section('title', 'Edit Video')
 @section('content')
-<h1 class="h3 text-gray-800">Upload Video</h1>
+<h1 class="h3 text-gray-800">Edit Video</h1>
 <div class="row justify-content-center mt-3">
   <div class="col-12">
     <div class="card shadow">
       <div class="card-body">
-        <form action="{{ route('authorvidio.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('authorvidio.update', $video->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
+          @method('put')
+          <input type="hidden" name="thumbnailLama" value="{{ $video->thumbnail }}">
           <div class="form-row">
             <div class="form-group col-12 col-lg-6">
               <label for="judul">Judul Video</label>
-              <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" id="judul" value="{{ old('judul') }}">
+              <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" id="judul" value="{{ $video->judul }}">
               @error('judul')
                 <p class="text-danger">{{ $message }}</p>
               @enderror
@@ -31,8 +33,7 @@
           <div class="form-row">
             <div class="form-group col-12 col-lg-6">
               <label for="url">Url Youtube</label>
-              <input type="text" name="url" class="form-control @error('url') is-invalid @enderror" id="url" value="{{ old('url') }}">
-              <small class="form-text text-muted">https://www.youtube.com/watch?v=<span class="text-success">ZBcSTqAneh4</span>. Cukup masukkan link URL yang berwarna hijau</small>
+              <input type="text" name="url" class="form-control @error('url') is-invalid @enderror" id="url" value="{{ $video->url }}">
               @error('url')
                 <p class="text-danger">{{ $message }}</p>
               @enderror
@@ -40,7 +41,7 @@
           </div>
           <div class="form-group">
             <label for="deskripsi">Deskripsi Video</label>
-            <textarea name="deskripsi" id="berita" rows="8" class="form-control @error('deskripsi') is-invalid @enderror">{{ old('deskripsi') }}</textarea>
+            <textarea name="deskripsi" id="berita" rows="8" class="form-control @error('deskripsi') is-invalid @enderror">{{ $video->deskripsi }}</textarea>
             @error('deskripsi')
               <p class="text-danger">{{ $message }}</p>
             @enderror

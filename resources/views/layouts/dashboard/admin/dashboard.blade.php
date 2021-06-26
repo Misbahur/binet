@@ -48,7 +48,11 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
+          @if (!Auth::user())
+            @php
+              return redirect()->route('login');
+            @endphp
+          @endif
           @yield('content')
 
         </div>

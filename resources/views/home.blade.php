@@ -79,7 +79,7 @@
           <h3>Mari Tonton Vidio Kami Juga</h3>
         </div>
       </div>
-      {{-- <div class="row mt-3 justify-content-center">
+      <div class="row mt-3 justify-content-center">
         <div class="col-12 col-md-6 pt-3">
           <div class="vidio-frame">
             <div class="embed-responsive embed-responsive-16by9 rounded">
@@ -93,14 +93,14 @@
         <div class="col-12 col-md-6 pt-3">
           <div class="vidio-frame">
             <div class="embed-responsive embed-responsive-16by9 rounded">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/watch?v=VV533WNITzs&list=RDf1bp6JmDIQI&index=8" allowfullscreen></iframe>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/y8nFBBRz4Ws" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;  picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="vidio-frame-title">
               <h4>Fiersa Bersari Waktu Yang Salah</h4>
             </div>
           </div>
         </div>
-      </div> --}}
+      </div>
       {{-- <div class="row justify-content-center">
         <div class="col-12 col-md-6 pt-3">
           <div class="vidio-frame">

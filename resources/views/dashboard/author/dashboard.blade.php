@@ -2,9 +2,19 @@
 @section('title', 'Dashboard')
 @section('content')
   <!-- Page Heading -->
-  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <div class="d-sm-flex align-items-center justify-content-between mb-2">
     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
   </div>
+
+  @if (!Auth::user()->alamat)
+  <div class="row">
+    <div class="col-12">
+      <div class="alert alert-success" role="alert">
+        Selamat datang {{ Auth::user()->name }}, silahkan lengkapi profil  kamu untuk melengkapi syarat sebagai author kami.
+      </div>
+    </div>
+  </div>
+  @endif
 
   <!-- Content Row -->
   <div class="row">
