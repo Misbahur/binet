@@ -112,22 +112,32 @@ body {
 }
 
 .old-news {
-  .media {
+  .thumbnail {
     .kotak {
       img {
-        height: 150px;
-        width: 150px;
+        height: 120px;
+        width: 140px;
       }
     }
   }
 }
 
 .vidio {
-  .title {
-    h3 {
+  h3 {
+    color: #181f57;
+    font-weight: 600;
+    font-size: 26px;
+  }
+
+  .vidio-thumbnail {
+    max-width: 100%;
+  }
+  .vidio-title {
+    h4 {
       color: #181f57;
-      font-weight: 600;
-      font-size: 28px;
+      font-size: 24px;
+      padding: 10px;
+      text-align: center;
     }
   }
   
@@ -215,18 +225,36 @@ nav {
     }
   }
 
-  .right-content,
-  .recomment-news {
-    .card {
-      background-color: #f2f2f2;
-    }
-  }
-
   .recomment-news {
     h3 {
       color: #181f57;
       font-weight: 600;
       font-size: 26px;
+    }
+
+    .card {
+      border: none;
+      .card-body {
+        text-align: center;
+        background-color: #f2f2f2;
+      }
+    }
+  }
+}
+
+// HotNews
+.hot-news {
+  height: 100vh;
+  .card {
+    .kotak {
+      img {
+        height: 160px;
+      }
+    }
+    border: none;
+    .card-body {
+      text-align: center;
+      background-color: #f2f2f2;
     }
   }
 }
@@ -276,7 +304,7 @@ hr {
 }
 
 // Effek Zoom Gambar
-.banner, .main-content {
+.banner, .main-content, {
   .news-content {
     .media {
       position: relative;
@@ -302,7 +330,55 @@ hr {
   }
 }
 
-.old-news, .recomment-news {
+.old-news {
+  .thumbnail {
+    position: relative;
+    overflow: hidden;
+  }
+  .kotak {
+    img {
+      -webkit-transition: 0.4s ease;
+      transition: 0.4s ease;
+    }
+  }
+
+  .zoom-effect {
+    &:hover {
+      .kotak {
+        img {
+          -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+        }
+      }
+    }
+  }
+}
+
+.vidio {
+  .vidio-thumbnail {
+    position: relative;
+    overflow: hidden;
+  }
+  .kotak {
+    img {
+      -webkit-transition: 0.4s ease;
+      transition: 0.4s ease;
+    }
+  }
+
+  .zoom-effect {
+    &:hover {
+      .kotak {
+        img {
+          -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+        }
+      }
+    }
+  }
+}
+
+.old-news, .recomment-news, .hot-news {
   .card {
     position: relative;
     overflow: hidden;
@@ -456,6 +532,40 @@ hr {
   }
   .middle-iklan-right {
     display: none;
+  }
+
+  .main-content {
+    .left-content {
+      .main-news {
+        .main-image {
+          img {
+            width: 450px;
+            height: 200px;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+        .main-title {
+          h1 {
+            font-size: 26px;
+            font-weight: 600;
+            color: #181f57;
+          }
+        }
+  
+        .main-full-news {
+          p {
+            font-size: 17px;
+            text-align: justify;
+          }
+        }
+      }
+    }
+  }
+
+  .hot-news {
+    height: auto;
   }
 }
 

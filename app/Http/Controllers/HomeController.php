@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HotNews;
 use App\Models\Status;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,6 +15,7 @@ class HomeController extends Controller
         $hotNewsLimit = HotNews::with(['news'])->limit(3)->get();
         $newsLimit = Status::where('status', 'Post')->orderByDesc('created_at')->limit(3)->get();
         $newsLimitAll = Status::where('status', 'Post')->orderByDesc('created_at')->offset(3)->limit(30)->get();
-        return view('home', compact('hotNews', 'hotNewsLimit', 'newsLimit', 'newsLimitAll'));
+        $videos = Video::orderByDesc('created_at')->limit(6)->get();
+        return view('home', compact('hotNews', 'hotNewsLimit', 'newsLimit', 'newsLimitAll', 'videos'));
     }
 }

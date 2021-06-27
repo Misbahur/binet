@@ -15,7 +15,8 @@
     <div class="container">
       <div class="row mr-lg-3 ml-lg-4">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('home') }}">News</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('home') }}">TVRI</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('hotNews') }}">Sports</a></li>
           <li class="breadcrumb-item active" aria-current="page">{{ $news->judul }}</li>
         </ol>
       </div>
@@ -49,12 +50,12 @@
                 <div class="media mt-3">
                   <div class="zoom-effect">
                     <div class="kotak">
-                      <img src="{{ url('/storage/thumbnail', $newsL->news->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
+                      <img src="{{ url('/storage/thumbnail', $newsL->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
                     </div>  
                   </div>
                   <div class="media-body">
-                    <p class="m-0">{{ $newsL->news->judul }}</p>
-                    <a href="#">Baca Selengkapnya...</a>
+                    <p class="m-0">{{ $newsL->judul }}</p>
+                    <a href="{{ route('sports.show', $newsL->slug) }}">Baca Selengkapnya...</a>
                   </div>
                 </div>
               @endforeach
@@ -82,13 +83,13 @@
           <div class="card">
             <div class="zoom-effect">
               <div class="kotak">
-                <a href="">
-                  <img src="{{ url('/storage/thumbnail', $newsLimitA->news->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
+                <a href="{{ route('sports.show', $newsLimitA->slug) }}">
+                  <img src="{{ url('/storage/thumbnail', $newsLimitA->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
                 </a>
               </div>
             </div>
             <div class="card-body">
-              <p>{{ $newsLimitA->news->judul }}</p>
+              <p>{{ $newsLimitA->judul }}</p>
             </div>
           </div>
         </div>

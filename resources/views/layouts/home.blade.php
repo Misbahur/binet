@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
   <link rel="stylesheet" href="{{ url('/frontend/library/bootstrap/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ url('/frontend/css/main.css') }}">
 </head>
@@ -28,7 +29,7 @@
           <p>
             <marquee behavior="left" width="1000px">
               @foreach ($hotNewsLimit as $hotNewsL)
-              ({{ $hotNewsL->news->status->tgl }}) {{ $hotNewsL->news->judul }}..... <a href="{{ route('view') }}" class="text-decoration-none"> Baca Selengkapnya &emsp;&emsp;&emsp;&emsp; </a>
+              ({{ $hotNewsL->news->status->tgl }}) {{ $hotNewsL->news->judul }}..... <a href="{{ route('view', $hotNewsL->news->slug) }}" class="text-decoration-none"> Baca Selengkapnya &emsp;&emsp;&emsp;&emsp; </a>
               @endforeach
             </marquee>
           </p>
@@ -45,5 +46,9 @@
 
   <script src="{{ url('/frontend/library/jquery/jquery-3.5.1.min.js') }}"></script>
   <script src="{{ url('/frontend/library/bootstrap/js/bootstrap.min.js') }}"></script>
+  <script src="https://cdn.plyr.io/3.6.8/plyr.polyfilled.js"></script>
+  <script>
+    const player = new Plyr('#player');
+  </script>
 </body>
 </html>

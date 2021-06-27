@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ViewController;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\HotNewsController;
+use App\Http\Controllers\NewsSportController;
 
 // Dashboard
 // Admin
@@ -30,7 +33,14 @@ use App\Http\Controllers\Dashboard\AuthorVidioController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/view', [ViewController::class, 'index'])->name('view');
+Route::get('/hotNews', [HotNewsController::class, 'index'])->name('hotNews');
+Route::get('/hotNews/{slug}', [HotNewsController::class, 'show'])->name('hotNews.show');
+Route::get('/sports', [NewsSportController::class, 'index'])->name('sports');
+Route::get('/sports/{slug}', [NewsSportController::class, 'show'])->name('sports.show');
+Route::get('/video', [VideoController::class, 'index'])->name('video');
+Route::get('/video/{slug}', [VideoController::class, 'show'])->name('video.show');
+Route::get('/{slug}', [ViewController::class, 'index'])->name('view');
+
 
 // Dashboard
 Route::prefix('/admin')

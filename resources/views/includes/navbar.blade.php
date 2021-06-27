@@ -1,9 +1,13 @@
 <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light first-navbar">
     <!-- Mobile Logo -->
-    <img src="{{ url('/frontend/images/logo/tvrisumut.png') }}" alt="" width="150px" class="logo d-md-none mx-auto">
+    <a href="{{ route('home') }}">
+      <img src="{{ url('/frontend/images/logo/tvrisumut.png') }}" alt="" width="150px" class="logo d-md-none mx-auto">
+    </a>
     <!-- Dekstop Logo-->
-    <img src="{{ url('/frontend/images/logo/tvrisumut.png') }}" alt="" width="170px" class="logo d-none d-md-block">
+    <a href="{{ route('home') }}">
+      <img src="{{ url('/frontend/images/logo/tvrisumut.png') }}" alt="" width="170px" class="logo d-none d-md-block">
+    </a>
     <button class="navbar-toggler small" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -48,19 +52,19 @@
         <a class="nav-link" href="{{ route('home') }}">Home</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="#">TVRI News</a>
+        <a class="nav-link" href="{{ route('hotNews') }}">TVRI Hot News</a>
       </li>
       <li class="nav-item pr-4">
         <a class="nav-link" href="#">TVRI Edukasi</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="#">TVRI Sport</a>
+        <a class="nav-link" href="{{ route('sports') }}">TVRI Sport</a>
       </li>
       <li class="nav-item pr-4">
         <a class="nav-link" href="#">TVRI Otomotif</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="#">TVRI Nonton</a>
+        <a class="nav-link" href="{{ route('video') }}">TVRI Nonton</a>
       </li>
       <li class="nav-item pr-4">
         <a class="nav-link" href="#">Live Streaming</a>

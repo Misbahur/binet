@@ -15,7 +15,8 @@
     <div class="container">
       <div class="row mr-lg-3 ml-lg-4">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('home') }}">News</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('home') }}">TVRI</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('hotNews') }}">Hot News</a></li>
           <li class="breadcrumb-item active" aria-current="page">{{ $news->judul }}</li>
         </ol>
       </div>
@@ -54,7 +55,7 @@
                   </div>
                   <div class="media-body">
                     <p class="m-0">{{ $newsL->news->judul }}</p>
-                    <a href="#">Baca Selengkapnya...</a>
+                    <a href="{{ route('hotNews.show', $newsL->news->slug) }}">Baca Selengkapnya...</a>
                   </div>
                 </div>
               @endforeach
@@ -82,7 +83,7 @@
           <div class="card">
             <div class="zoom-effect">
               <div class="kotak">
-                <a href="">
+                <a href="{{ route('hotNews.show', $newsLimitA->news->slug) }}">
                   <img src="{{ url('/storage/thumbnail', $newsLimitA->news->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
                 </a>
               </div>
