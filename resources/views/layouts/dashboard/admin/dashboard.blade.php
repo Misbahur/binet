@@ -18,6 +18,17 @@
   {{-- Summernote --}}
   <link rel="stylesheet" href="{{ url('/frontend/library/summernote/summernote-lite.min.css') }}">
 
+  {{-- Gijgo --}}
+  <link rel="stylesheet" href="{{ url('/frontend/library/gijgo/css/gijgo.min.css') }}">
+  <style>
+    .gj-datepicker .input-group-addon img {
+      margin-left: -30px;
+    }
+  </style>
+
+  {{-- Fancybox --}}
+  <link rel="stylesheet" href="{{ url('/frontend/library/facancybox/jquery.fancybox.min.css') }}">
+
   <!-- Custom fonts for this template-->
   <link href="{{ url('frontend/library/sbadmin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -90,6 +101,12 @@
 
   {{-- Summernote --}}
   <script src="{{ url('/frontend/library/summernote/summernote-lite.min.js') }}"></script>
+
+  {{-- Gijgo --}}
+  <script src="{{ url('/frontend/library/gijgo/js/gijgo.min.js') }}"></script>
+
+  {{-- Fancybox --}}
+  <script src="{{ url('/frontend/library/facancybox/jquery.fancybox.min.js') }}"></script>
   
   <script>
     //Datatables
@@ -116,6 +133,15 @@
       };
     };
 
+    function previewImageIklan() {
+      var oFReader = new FileReader();
+      oFReader.readAsDataURL(document.getElementById("iklan").files[0]);
+      oFReader.onload = function (oFREvent)
+      {
+          document.getElementById("previewIklan").src = oFREvent.target.result;
+      };
+    };
+
     // Summernote
     $('#berita').summernote({
       placeholder: 'Ada berita apa hari ini??',
@@ -130,6 +156,22 @@
         ['insert', ['link', 'picture', 'video', 'videoAttributes', 'media']],
         ['view', ['fullscreen', 'codeview', 'help']]
       ]
+    });
+
+    // Date Picker
+    $('#awalTampil').datepicker({
+      format: 'yyyy-mm-dd',
+      uiLibrary: 'bootstrap4'
+    });
+    
+    $('#akhirTampil').datepicker({
+      format: 'yyyy-mm-dd',
+      uiLibrary: 'bootstrap4'
+    });
+
+    // Fancybox
+    $(document).ready(function() {
+      $("a#single_image").fancybox();
     });
 
   </script>

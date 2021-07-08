@@ -6,6 +6,7 @@
     <h1 class="h3 text-gray-800">Advertisement</h1>
     <div class="row">
       <div class="col-12 col-lg-6">
+        <a href="{{ route('iklan.create') }}" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Buat Iklan</a>
       </div>
       <div class="col-12 col-lg-6">
         @if (session('alert'))
@@ -22,12 +23,11 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>Profil</th>
-          <th>Nama</th>
-          <th>Email</th>
-          <th>Handphone</th>
-          <th>Alamat</th>
-          <th>Status</th>
+          <th>Perusahaan</th>
+          <th>Awal Tayang</th>
+          <th>Akhir Tayang</th>
+          <th>url</th>
+          <th>Iklan</th>
           <th>Aksi</th>
         </tr>
       </thead>
