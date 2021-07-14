@@ -3,10 +3,30 @@
 @section('content')
 {{-- Iklan --}}
 <div class="left-iklan mt-2">
-  <img src="{{ url('/storage/iklan/left-iklan.jpg') }}" alt="Iklan">
+  @if ($leftAdvertisement)
+    @if (($leftAdvertisement->awalTampil && $leftAdvertisement->akhirTampil) <=  \Carbon\Carbon::now()->format('Y-m-d'))
+      <a href="{{ $leftAdvertisement->url }}" target="_blank">
+        <img src="{{ url('/storage/iklan', $leftAdvertisement->iklan) }}" alt="">
+      </a>
+    @endif
+  @else
+    <a href="#">
+      <img src="{{ url('/storage/iklan/leftBlank.png') }}" alt="">
+    </a>
+  @endif
 </div>
 <div class="right-iklan mt-2">
-  <img src="{{ url('/storage/iklan/left-iklan.jpg') }}" alt="Iklan">
+  @if ($rightAdvertisement)
+    @if (($rightAdvertisement->awalTampil && $rightAdvertisement->akhirTampil) <=  \Carbon\Carbon::now()->format('Y-m-d'))
+      <a href="{{ $rightAdvertisement->url }}" target="_blank">
+        <img src="{{ url('/storage/iklan', $rightAdvertisement->iklan) }}" alt="">
+      </a>
+    @endif
+  @else
+    <a href="#">
+      <img src="{{ url('/storage/iklan/leftBlank.png') }}" alt="">
+    </a>
+  @endif
 </div>
 
 <div class="hot-news">

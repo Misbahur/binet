@@ -4,10 +4,30 @@
 @section('content')
 {{-- Iklan --}}
 <div class="left-iklan mt-2">
-  <img src="{{ url('/storage/iklan/left-iklan.jpg') }}" alt="Iklan">
+  @if ($leftAdvertisement)
+    @if (($leftAdvertisement->awalTampil && $leftAdvertisement->akhirTampil) <=  \Carbon\Carbon::now()->format('Y-m-d'))
+      <a href="{{ $leftAdvertisement->url }}" target="_blank">
+        <img src="{{ url('/storage/iklan', $leftAdvertisement->iklan) }}" alt="">
+      </a>
+    @endif
+  @else
+    <a href="#">
+      <img src="{{ url('/storage/iklan/leftBlank.png') }}" alt="">
+    </a>
+  @endif
 </div>
 <div class="right-iklan mt-2">
-  <img src="{{ url('/storage/iklan/left-iklan.jpg') }}" alt="Iklan">
+  @if ($rightAdvertisement)
+    @if (($rightAdvertisement->awalTampil && $rightAdvertisement->akhirTampil) <=  \Carbon\Carbon::now()->format('Y-m-d'))
+      <a href="{{ $rightAdvertisement->url }}" target="_blank">
+        <img src="{{ url('/storage/iklan', $rightAdvertisement->iklan) }}" alt="">
+      </a>
+    @endif
+  @else
+    <a href="#">
+      <img src="{{ url('/storage/iklan/leftBlank.png') }}" alt="">
+    </a>
+  @endif
 </div>
 
 <div class="main-content">
@@ -34,7 +54,7 @@
           <div class="main-title text-center mt-3">
             <h1>{{ $news->judul }}</h1>
           </div>
-          <div class="main-full-news pt-3">
+          <div class="main-full-news p-3">
             <p>
               {!! $news->berita !!}
             </p>
@@ -63,7 +83,18 @@
           </div>
         </div>
         <div class="middle-iklan-right pt-5">
-          <img src="{{ url('/storage/iklan/middle-iklan-right.jpg') }}" alt="">
+          {{-- Middle Iklan --}}
+          @if ($middleAdvertisement)
+            @if (($middleAdvertisement->awalTampil && $middleAdvertisement->akhirTampil) <=  \Carbon\Carbon::now()->format('Y-m-d'))
+              <a href="{{ $middleAdvertisement->url }}" target="_blank">
+                <img src="{{ url('/storage/iklan', $middleAdvertisement->iklan) }}" alt="">
+              </a>
+            @endif
+          @else
+            <a href="#">
+              <img src="{{ url('/storage/iklan/middleBlank.png') }}" alt="">
+            </a>
+          @endif
         </div>
       </div>
     </div>

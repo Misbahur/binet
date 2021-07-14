@@ -13,8 +13,19 @@
     </button>
   
     <div class="collapse navbar-collapse small" id="navbarSupportedContent">
+      {{-- Top Iklan --}}
       <ul class="navbar-nav ml-auto mr-auto top-iklan text-center">
-        <img src="{{ url('/storage/iklan/top-iklan.jpg') }}" alt="">
+        @if ($topAdvertisement)
+          @if (($topAdvertisement->awalTampil && $topAdvertisement->akhirTampil) <=  \Carbon\Carbon::now()->format('Y-m-d'))
+            <a href="{{ $topAdvertisement->url }}" target="_blank">
+              <img src="{{ url('/storage/iklan', $topAdvertisement->iklan) }}" alt="">
+            </a>
+          @endif
+        @else
+          <a href="#">
+            <img src="{{ url('/storage/iklan/topBlank.png') }}" alt="">
+          </a>
+        @endif
       </ul>
       <ul class="navbar-nav ml-auto">
         @if (Route::has('login'))
