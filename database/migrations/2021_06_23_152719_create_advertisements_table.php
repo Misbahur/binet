@@ -15,6 +15,12 @@ class CreateAdvertisementsTable extends Migration
     {
         Schema::create('advertisements', function (Blueprint $table) {
             $table->id();
+            $table->string('perusahaan', 100);
+            $table->date('awalTampil');
+            $table->date('akhirTampil');
+            $table->text('url');
+            $table->string('iklan', 100);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
