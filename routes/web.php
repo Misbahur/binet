@@ -15,6 +15,7 @@ use App\Http\Controllers\Dashboard\AdminBeritaController;
 use App\Http\Controllers\Dashboard\AdminStatusBeritaController;
 use App\Http\Controllers\Dashboard\AdminAuthorController;
 use App\Http\Controllers\Dashboard\IklanController;
+use App\Http\Controllers\Dashboard\AdminVideoController;
 // Author
 use App\Http\Controllers\Dashboard\AuthorDashboardController;
 use App\Http\Controllers\Dashboard\BeritaController;
@@ -39,6 +40,8 @@ Route::get('/sports', [NewsSportController::class, 'index'])->name('sports');
 Route::get('/sports/{slug}', [NewsSportController::class, 'show'])->name('sports.show');
 Route::get('/video', [VideoController::class, 'index'])->name('video');
 Route::get('/video/{slug}', [VideoController::class, 'show'])->name('video.show');
+Route::view('/sejarah', 'tvri.sejarah');
+Route::view('/visi-misi', 'tvri.visi-misi');
 Route::get('/{slug}', [ViewController::class, 'index'])->name('view');
 
 
@@ -54,6 +57,7 @@ Route::prefix('/admin')
         Route::get('/adminberita/preview/{id}', [AdminBeritaController::class, 'view'])->name('adminberita.preview');
         Route::resource('/adminstatus', AdminStatusBeritaController::class);
         Route::resource('/author', AdminAuthorController::class);
+        Route::resource('/adminvidio', AdminVideoController::class);
         Route::resource('/iklan', IklanController::class);
       });
       

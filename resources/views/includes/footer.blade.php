@@ -11,16 +11,20 @@
       <div class="col-lg-3">
         <h5>Tentang Kami</h5>
         <ul class="list-unstyled">
-          <li><a href="#">Sejarah</a></li>
-          <li><a href="#">Visi Misi</a></li>
-          <li><a href="#">Hubungi Kami</a></li>
+          <li><a href="/sejarah" class="text-decoration-none">Sejarah</a></li>
+          <li><a href="/visi-misi" class="text-decoration-none">Visi Misi</a></li>
+        </ul>
+        <h5>Hubungi Kami</h5>
+        <ul class="list-unstyled">
+          <li>Phone</li>
+          <li>Email</li>
         </ul>
       </div>
       <div class="col-lg-3">
         <h5>Layanan Kami</h5>
         <ul class="list-unstyled">
-          <li><a href="#">Live Streaming</a></li>
-          <li><a href="#">Berita Publikasi</a></li>
+          <li><a href="#" class="text-decoration-none">Live Streaming</a></li>
+          <li><a href="{{ route('home') }}" class="text-decoration-none">Berita Publikasi</a></li>
         </ul>
       </div>
       <div class="col-lg-3">

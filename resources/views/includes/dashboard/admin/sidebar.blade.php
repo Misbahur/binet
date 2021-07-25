@@ -34,6 +34,12 @@
     </a>
   </li>
   <li class="nav-item active">
+    <a class="nav-link" href="{{ route('adminvidio.index') }}">
+      <i class="fas fa-fw fa-newspaper"></i>
+      <span>Video</span>
+    </a>
+  </li>
+  <li class="nav-item active">
     <a class="nav-link" href="{{ route('adminstatus.index') }}">
       <i class="fas fa-fw fa-upload"></i>
       <span>Status</span>
