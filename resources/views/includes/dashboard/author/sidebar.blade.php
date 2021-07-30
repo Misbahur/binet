@@ -10,7 +10,7 @@
   <hr class="sidebar-divider my-0">
   <!-- Nav Item - Dashboard -->
   <li class="nav-item active">
-    <a class="nav-link" href="#">
+    <a class="nav-link" href="{{ route('dashboard.author') }}">
       <i class="fas fa-fw fa-tachometer-alt"></i>
       <span>Dashboard Author</span>
     </a>
@@ -35,12 +35,6 @@
       </a>
     </li>
     @else
-      <li class="nav-item active">
-        <a id="anchor" class="nav-link" href="{{ route('dashboard.author') }}">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard Author</span>
-        </a>
-      </li>
       <li class="nav-item active">
         <a class="nav-link" href="{{ route('authorberita.index') }}">
           <i class="fas fa-fw fa-newspaper"></i>

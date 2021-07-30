@@ -28,9 +28,11 @@
           <p class="float-left mr-3">Berita Terkini : </p>
           <p>
             <marquee behavior="left" width="1000px">
-              @foreach ($hotNewsLimit as $hotNewsL)
-              ({{ $hotNewsL->news->status->tgl }}) {{ $hotNewsL->news->judul }}..... <a href="{{ route('view', $hotNewsL->news->slug) }}" class="text-decoration-none"> Baca Selengkapnya &emsp;&emsp;&emsp;&emsp; </a>
-              @endforeach
+              @forelse ($hotNewsLimit as $hotNewsL)
+                ({{ $hotNewsL->news->status->tgl }}) {{ $hotNewsL->news->judul }}..... <a href="{{ route('view', $hotNewsL->news->slug) }}" class="text-decoration-none"> Baca Selengkapnya &emsp;&emsp;&emsp;&emsp; </a>
+              @empty
+                Tidak ada berita hot saat ini
+              @endforelse
             </marquee>
           </p>
         </div>

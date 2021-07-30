@@ -66,13 +66,13 @@
         <a class="nav-link" href="{{ route('hotNews') }}">TVRI Hot News</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="#">TVRI Edukasi</a>
+        <a class="nav-link" href="{{ route('edukasi') }}">TVRI Edukasi</a>
       </li>
       <li class="nav-item pr-4">
         <a class="nav-link" href="{{ route('sports') }}">TVRI Sport</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="#">TVRI Otomotif</a>
+        <a class="nav-link" href="{{ route('otomotif') }}">TVRI Otomotif</a>
       </li>
       <li class="nav-item pr-4">
         <a class="nav-link" href="{{ route('video') }}">TVRI Nonton</a>

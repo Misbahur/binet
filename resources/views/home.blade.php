@@ -35,15 +35,19 @@
     <div class="container">
       <div class="row mr-lg-3 ml-lg-3">
         <div class="col-12 col-lg-8 left-content">
-          <div class="jumbotron p-0">
-            <img src="{{ url('/storage/thumbnail', $hotNews->news->thumbnail) }}" alt="" class="img-fluid">
-            <div class="title-news">
-              <p class="badge badge-danger">{{ $hotNews->news->kategori }}</p>
-              <a href="{{ route('view', $hotNews->news->slug) }}">
-                <h1>{{ $hotNews->news->judul }}</h1>
-              </a>
+          @if (!$hotNews)
+            <h3>Tidak ada Berita Hot News Saat Ini</h3>
+          @else 
+            <div class="jumbotron p-0">
+              <img src="{{ url('/storage/thumbnail', $hotNews->news->thumbnail) }}" alt="" class="img-fluid">
+              <div class="title-news">
+                <p class="badge badge-danger">{{ $hotNews->news->kategori }}</p>
+                <a href="{{ route('view', $hotNews->news->slug) }}">
+                  <h1>{{ $hotNews->news->judul }}</h1>
+                </a>
+              </div>
             </div>
-          </div>
+          @endif
         </div>
         <div class="col-12 col-lg-4 right-content">
           <div class="card">
@@ -59,7 +63,7 @@
                     </div>
                     <div class="media-body">
                       <p class="m-0">{{ $newsL->news->judul }}</p>
-                      <a href="#">Baca Selengkapnya...</a>
+                      <a href="{{ route('view', $newsL->news->slug) }}">Baca Selengkapnya...</a>
                     </div>
                   </div>
                 @endforeach
