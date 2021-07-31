@@ -30,10 +30,9 @@
       <div class="col-lg-3">
         <h5>Sosial Media</h5>
         <div class="sosial-media">
-          <a href="#"><img src="{{ url('/frontend/images/icon/facebook.png') }}" alt=""></a>
-          <a href="#"><img src="{{ url('/frontend/images/icon/twitter.png') }}" alt=""></a>
-          <a href="#"><img src="{{ url('/frontend/images/icon/instagram.png') }}" alt=""></a>
-          <a href="#"><img src="{{ url('/frontend/images/icon/youtube.png') }}" alt=""></a>
+          <a href="https://www.facebook.com/StasiunTvriSumateraUtara/?ref=page_internal"><img src="{{ url('/frontend/images/icon/facebook.png') }}" alt=""></a>
+          <a href="https://instagram.com/tvrisumut_official?utm_medium=copy_link"><img src="{{ url('/frontend/images/icon/instagram.png') }}" alt=""></a>
+          <a href="https://youtube.com/c/TVRISUMATERAUTARA"><img src="{{ url('/frontend/images/icon/youtube.png') }}" alt=""></a>
         </div>
       </div>
     </div>
