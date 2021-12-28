@@ -9,12 +9,12 @@ use App\Models\Advertisement;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
-class EducationNewsController extends Controller
+class EkonomiNewsController extends Controller
 {
     public function index()
     {
         $hotNewsLimit = HotNews::with(['news'])->limit(3)->get();
-        $news = News::where('kategori', 'edukasi')->get();
+        $news = News::where('kategori', 'ekonomi')->get();
         $topAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'top')
         ->first();
         $leftAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'left')
@@ -23,15 +23,15 @@ class EducationNewsController extends Controller
         ->first();
         $middleAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'middle')
         ->first();
-        return view('edukasi.edukasi', compact('hotNewsLimit', 'news', 'topAdvertisement', 'leftAdvertisement', 'rightAdvertisement', 'middleAdvertisement'));
+        return view('ekonomi.ekonomi', compact('hotNewsLimit', 'news', 'topAdvertisement', 'leftAdvertisement', 'rightAdvertisement', 'middleAdvertisement'));
     }
 
     public function show($slug)
     {
         $hotNewsLimit = HotNews::with(['news'])->limit(3)->get();
         $news = News::where('slug', $slug)->first();
-        $newsLimit = News::where('kategori', 'edukasi')->orderByDesc('created_at')->limit(3)->get();
-        $newsLimitAll = News::where('kategori', 'edukasi')->orderByDesc('created_at')->offset(3)->limit(12)->get();
+        $newsLimit = News::where('kategori', 'ekonomi')->orderByDesc('created_at')->limit(3)->get();
+        $newsLimitAll = News::where('kategori', 'ekonomi')->orderByDesc('created_at')->offset(3)->limit(12)->get();
         $topAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'top')
         ->first();
         $leftAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'left')

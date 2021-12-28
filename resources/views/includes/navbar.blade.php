@@ -66,7 +66,7 @@
         <a class="nav-link" href="{{ route('hotNews') }}">Hot News</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('edukasi') }}">Ekonomi</a>
+        <a class="nav-link" href="{{ route('ekonomi') }}">Ekonomi</a>
       </li>
       <li class="nav-item pr-4">
         <a class="nav-link" href="{{ route('sports') }}">Budaya & Sejarah</a>
