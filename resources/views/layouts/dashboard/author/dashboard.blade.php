@@ -8,9 +8,9 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <link rel="shortcut icon" href="{{ url('/frontend/images/logo/tvrisumut.png') }}">
+  <link rel="shortcut icon" href="{{ url('/frontend/images/logo/logo1hitam.png') }}">
 
-  <title>@yield('title') Portal TVRI Sumut</title>
+  <title>@yield('title') Portal BINET</title>
 
   {{-- Datatables --}}
   <link rel="stylesheet" href="{{ url('/frontend/library/dataTables/datatables.min.css') }}">

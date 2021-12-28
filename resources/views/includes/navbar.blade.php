@@ -2,11 +2,11 @@
   <nav class="navbar navbar-expand-lg navbar-light first-navbar">
     <!-- Mobile Logo -->
     <a href="{{ route('home') }}">
-      <img src="{{ url('/frontend/images/logo/tvrisumut.png') }}" alt="" width="150px" class="logo d-md-none mx-auto">
+      <img src="{{ url('/frontend/images/logo/logo1hitam.png') }}" alt="" width="150px" class="logo d-md-none mx-auto">
     </a>
     <!-- Dekstop Logo-->
     <a href="{{ route('home') }}">
-      <img src="{{ url('/frontend/images/logo/tvrisumut.png') }}" alt="" width="170px" class="logo d-none d-md-block">
+      <img src="{{ url('/frontend/images/logo/logo1hitam.png') }}" alt="" width="170px" class="logo d-none d-md-block">
     </a>
     <button class="navbar-toggler small" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -63,19 +63,22 @@
         <a class="nav-link" href="{{ route('home') }}">Home</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('hotNews') }}">TVRI Hot News</a>
+        <a class="nav-link" href="{{ route('hotNews') }}">Hot News</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('edukasi') }}">TVRI Edukasi</a>
+        <a class="nav-link" href="{{ route('edukasi') }}">Ekonomi</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('sports') }}">TVRI Sport</a>
+        <a class="nav-link" href="{{ route('sports') }}">Budaya & Sejarah</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('otomotif') }}">TVRI Otomotif</a>
+        <a class="nav-link" href="{{ route('otomotif') }}">Hiburan</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('video') }}">TVRI Nonton</a>
+        <a class="nav-link" href="{{ route('otomotif') }}">Gaya Hidup</a>
+      </li>
+      <li class="nav-item pr-4">
+        <a class="nav-link" href="{{ route('video') }}">Binet Nonton</a>
       </li>
       <li class="nav-item pr-4">
         <a class="nav-link" href="#">Live Streaming</a>

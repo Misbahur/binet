@@ -1,5 +1,5 @@
 @extends('layouts.home')
-@section('title', 'TVRI (Televisi Republik Indonesia)')
+@section('title', 'BINET (Kabar Terpercaya)')
 
 @section('content')
   {{-- Iklan --}}
