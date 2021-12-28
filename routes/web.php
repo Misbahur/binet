@@ -46,8 +46,8 @@ Route::get('/hiburan', [HiburanController::class, 'index'])->name('hiburan');
 Route::get('/hiburan/{slug}', [HiburanController::class, 'show'])->name('hiburan.show');
 Route::get('/video', [VideoController::class, 'index'])->name('video');
 Route::get('/video/{slug}', [VideoController::class, 'show'])->name('video.show');
-Route::view('/sejarah', 'tvri.sejarah');
-Route::view('/visi-misi', 'tvri.visi-misi');
+Route::view('/sejarah', 'binet.sejarah');
+Route::view('/visi-misi', 'binet.visi-misi');
 Route::get('/{slug}', [ViewController::class, 'index'])->name('view');
 
 

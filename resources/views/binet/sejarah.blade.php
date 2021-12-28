@@ -1,4 +1,4 @@
-@extends('layouts.tvri.sejarah')
+@extends('layouts.binet.template')
 @section('title', 'Sejarah BINET')
 
 @section('content')

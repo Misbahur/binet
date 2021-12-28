@@ -11,7 +11,7 @@
             <h1>Login Admin Berita</h1>
             <p>Mari Berikan Berita Terbaik Dan Up To Date</p>
             <a href="{{ route('home') }}">
-              <img src="{{ url('/frontend/images/logo/tvrisumut.png') }}" alt="Logo" class="pb-4">
+              <img src="{{ url('/frontend/images/logo/logo1hitam.png') }}" alt="Logo" class="pb-4">
             </a>
             <form action="{{ route('login') }}" method="POST">
               @csrf

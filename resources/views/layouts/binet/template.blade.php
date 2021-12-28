@@ -64,23 +64,23 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item pr-4">
+      <li class="nav-item pr-4">
         <a class="nav-link" href="{{ route('home') }}">Home</a>
       </li>
       <li class="nav-item pr-4">
         <a class="nav-link" href="{{ route('hotNews') }}">Hot News</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('edukasi') }}">Ekonomi</a>
+        <a class="nav-link" href="{{ route('ekonomi') }}">Ekonomi</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('sports') }}">Budaya & Sejarah</a>
+        <a class="nav-link" href="{{ route('sejarah&budaya') }}">Budaya & Sejarah</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('otomotif') }}">Hiburan</a>
+        <a class="nav-link" href="{{ route('hiburan') }}">Hiburan</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('otomotif') }}">Gaya Hidup</a>
+        <a class="nav-link" href="{{ route('hiburan') }}">Gaya Hidup</a>
       </li>
       <li class="nav-item pr-4">
         <a class="nav-link" href="{{ route('video') }}">Binet Nonton</a>
@@ -88,27 +88,27 @@
       <li class="nav-item pr-4">
         <a class="nav-link" href="#">Live Streaming</a>
       </li>
-        @if (Route::has('login'))
-          @auth
-            {{-- Mobile --}}
-            <form action="{{ route('logout') }}" method="POST">
-              @csrf
-              <a href="{{ route('logout') }}" class="d-sm-block mb-2 py-2 d-md-none btn btn-signup btn-block ml-sm-0 text-white" onclick="event.preventDefault(); this.closest('form').submit();" style="background-color: #040a3d">
-                Logout
-              </a>
-            </form>
-            @else
-              <!-- Mobile Button -->
-              <a href="{{ route('login') }}" class="d-sm-block text-white py-2 d-md-none btn btn-login btn-block ml-sm-0" style="background-color: #040a3d">
-                Login
-              </a>
-              <!-- Mobile Button -->
-              <a href="{{ route('register') }}" class="d-sm-block text-white py-2 d-md-none btn btn-signup btn-block ml-sm-0" style="background-color: #040a3d">
-                Sign Up
-              </a>
-          @endauth
-        @endif
-      </ul>
+      @if (Route::has('login'))
+        @auth
+          {{-- Mobile --}}
+          <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <a href="{{ route('logout') }}" class="d-sm-block mb-2 py-2 d-md-none btn btn-signup btn-block ml-sm-0 text-white" onclick="event.preventDefault(); this.closest('form').submit();" style="background-color: #040a3d">
+              Logout
+            </a>
+          </form>
+          @else
+            <!-- Mobile Button -->
+            <a href="{{ route('login') }}" class="d-sm-block text-white py-2 d-md-none btn btn-login btn-block ml-sm-0" style="background-color: #040a3d">
+              Login
+            </a>
+            <!-- Mobile Button -->
+            <a href="{{ route('register') }}" class="d-sm-block text-white py-2 d-md-none btn btn-signup btn-block ml-sm-0" style="background-color: #040a3d">
+              Sign Up
+            </a>
+        @endauth
+      @endif
+    </ul>
     </div>
   </nav>
   
