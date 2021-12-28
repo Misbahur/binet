@@ -35,8 +35,8 @@
     <div class="container">
       <div class="row mr-lg-3 ml-lg-4">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('home') }}">TVRI</a></li>
-          <li class="breadcrumb-item"><a href="{{ route('edukasi') }}">Edukasi</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('home') }}">BINET</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('edukasi') }}">EKONOMI</a></li>
           <li class="breadcrumb-item active" aria-current="page">{{ $news->judul }}</li>
         </ol>
       </div>

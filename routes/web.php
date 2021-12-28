@@ -6,7 +6,7 @@ use App\Http\Controllers\ViewController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\HotNewsController;
 use App\Http\Controllers\NewsSportController;
-use App\Http\Controllers\EducationNewsController;
+use App\Http\Controllers\EkonomiNewsController;
 use App\Http\Controllers\OtomotifController;
 
 // Dashboard
@@ -38,8 +38,8 @@ use App\Http\Controllers\Dashboard\AuthorVidioController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/hotNews', [HotNewsController::class, 'index'])->name('hotNews');
 Route::get('/hotNews/{slug}', [HotNewsController::class, 'show'])->name('hotNews.show');
-Route::get('/edukasi', [EducationNewsController::class, 'index'])->name('edukasi');
-Route::get('/edukasi/{slug}', [EducationNewsController::class, 'show'])->name('edukasi.show');
+Route::get('/edukasi', [EkonomiNewsController::class, 'index'])->name('edukasi');
+Route::get('/edukasi/{slug}', [EkonomiNewsController::class, 'show'])->name('edukasi.show');
 Route::get('/sports', [NewsSportController::class, 'index'])->name('sports');
 Route::get('/sports/{slug}', [NewsSportController::class, 'show'])->name('sports.show');
 Route::get('/otomotif', [OtomotifController::class, 'index'])->name('otomotif');
