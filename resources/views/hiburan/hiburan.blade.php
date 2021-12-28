@@ -1,5 +1,5 @@
 @extends('layouts.home')
-@section('title', 'TVRI Otomotif')
+@section('title', 'BINET Hiburan')
 @section('content')
 {{-- Iklan --}}
 <div class="left-iklan mt-2">
@@ -34,8 +34,8 @@
     <div class="container">
       <div class="row mr-lg-3 ml-lg-4">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('home') }}">TVRI</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Otomotif</li>
+          <li class="breadcrumb-item"><a href="{{ route('home') }}">BINET</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Hiburan</li>
         </ol>
       </div>
     </div>

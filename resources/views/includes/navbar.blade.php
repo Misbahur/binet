@@ -72,10 +72,10 @@
         <a class="nav-link" href="{{ route('sejarah&budaya') }}">Budaya & Sejarah</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('otomotif') }}">Hiburan</a>
+        <a class="nav-link" href="{{ route('hiburan') }}">Hiburan</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('otomotif') }}">Gaya Hidup</a>
+        <a class="nav-link" href="{{ route('hiburan') }}">Gaya Hidup</a>
       </li>
       <li class="nav-item pr-4">
         <a class="nav-link" href="{{ route('video') }}">Binet Nonton</a>

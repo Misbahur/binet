@@ -7,7 +7,7 @@ use App\Http\Controllers\VideoController;
 use App\Http\Controllers\HotNewsController;
 use App\Http\Controllers\SebudNewsController;
 use App\Http\Controllers\EkonomiNewsController;
-use App\Http\Controllers\OtomotifController;
+use App\Http\Controllers\HiburanController;
 
 // Dashboard
 // Admin
@@ -42,8 +42,8 @@ Route::get('/ekonomi', [EkonomiNewsController::class, 'index'])->name('ekonomi')
 Route::get('/ekonomi/{slug}', [EkonomiNewsController::class, 'show'])->name('ekonomi.show');
 Route::get('/sejarah&budaya', [SebudNewsController::class, 'index'])->name('sejarah&budaya');
 Route::get('/sejarah&budaya/{slug}', [SebudNewsController::class, 'show'])->name('sejarah&budaya.show');
-Route::get('/otomotif', [OtomotifController::class, 'index'])->name('otomotif');
-Route::get('/otomotif/{slug}', [OtomotifController::class, 'show'])->name('otomotif.show');
+Route::get('/hiburan', [HiburanController::class, 'index'])->name('hiburan');
+Route::get('/hiburan/{slug}', [HiburanController::class, 'show'])->name('hiburan.show');
 Route::get('/video', [VideoController::class, 'index'])->name('video');
 Route::get('/video/{slug}', [VideoController::class, 'show'])->name('video.show');
 Route::view('/sejarah', 'tvri.sejarah');

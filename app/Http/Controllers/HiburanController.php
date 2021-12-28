@@ -9,7 +9,7 @@ use App\Models\Advertisement;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
-class OtomotifController extends Controller
+class HiburanController extends Controller
 {
     public function index()
     {
@@ -23,6 +23,6 @@ class OtomotifController extends Controller
         ->first();
         $middleAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'middle')
         ->first();
-        return view('otomotif.otomotif', compact('hotNewsLimit', 'news', 'topAdvertisement', 'leftAdvertisement', 'rightAdvertisement', 'middleAdvertisement'));
+        return view('hiburan.hiburan', compact('hotNewsLimit', 'news', 'topAdvertisement', 'leftAdvertisement', 'rightAdvertisement', 'middleAdvertisement'));
     }
 }
