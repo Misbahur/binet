@@ -1,5 +1,5 @@
 @extends('layouts.home')
-@section('title', 'TVRI Sports')
+@section('title', 'BINET Sejarah & Budaya')
 @section('content')
 {{-- Iklan --}}
 <div class="left-iklan mt-2">
@@ -34,8 +34,8 @@
     <div class="container">
       <div class="row mr-lg-3 ml-lg-4">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('home') }}">TVRI</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Sports</li>
+          <li class="breadcrumb-item"><a href="{{ route('home') }}">BINET</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Sejarah & Budaya</li>
         </ol>
       </div>
     </div>
@@ -48,7 +48,7 @@
         <div class="card">
           <div class="zoom-effect">
             <div class="kotak">
-              <a href="{{ route('sports.show', $news->slug) }}">
+              <a href="{{ route('sejarah&budaya.show', $news->slug) }}">
                 <img src="{{ url('/storage/thumbnail', $news->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
               </a>
             </div>

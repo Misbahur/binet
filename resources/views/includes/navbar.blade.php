@@ -69,7 +69,7 @@
         <a class="nav-link" href="{{ route('ekonomi') }}">Ekonomi</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('sports') }}">Budaya & Sejarah</a>
+        <a class="nav-link" href="{{ route('sejarah&budaya') }}">Budaya & Sejarah</a>
       </li>
       <li class="nav-item pr-4">
         <a class="nav-link" href="{{ route('otomotif') }}">Hiburan</a>
