@@ -1,5 +1,5 @@
 @extends('layouts.home')
-@section('title', 'TVRI Hot News')
+@section('title', 'BINET Hot News')
 @section('content')
 {{-- Iklan --}}
 <div class="left-iklan mt-2">
@@ -34,10 +34,18 @@
     <div class="container">
       <div class="row mr-lg-3 ml-lg-4">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('home') }}">TVRI</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('home') }}">BINET</a></li>
           <li class="breadcrumb-item active" aria-current="page">Hot News</li>
         </ol>
       </div>
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-light">
+    <div class="container justify-content-start">
+      <button class="btn btn-sm btn-outline-secondary mr-2 active" type="button">Lokal</button>
+      <button class="btn btn-sm btn-outline-secondary mr-2" type="button">Nasional</button>
+      <button class="btn btn-sm btn-outline-secondary mr-2" type="button">Internasional</button>
     </div>
   </nav>
 
