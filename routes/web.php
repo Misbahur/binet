@@ -8,6 +8,7 @@ use App\Http\Controllers\HotNewsController;
 use App\Http\Controllers\SebudNewsController;
 use App\Http\Controllers\EkonomiNewsController;
 use App\Http\Controllers\HiburanController;
+use App\Http\Controllers\GayaHidupNewsController;
 
 // Dashboard
 // Admin
@@ -44,6 +45,8 @@ Route::get('/sejarah&budaya', [SebudNewsController::class, 'index'])->name('seja
 Route::get('/sejarah&budaya/{slug}', [SebudNewsController::class, 'show'])->name('sejarah&budaya.show');
 Route::get('/hiburan', [HiburanController::class, 'index'])->name('hiburan');
 Route::get('/hiburan/{slug}', [HiburanController::class, 'show'])->name('hiburan.show');
+Route::get('/gayahidup', [GayaHidupNewsController::class, 'index'])->name('gayahidup');
+Route::get('/gayahidup/{slug}', [GayaHidupNewsController::class, 'show'])->name('gayahidup.show');
 Route::get('/video', [VideoController::class, 'index'])->name('video');
 Route::get('/video/{slug}', [VideoController::class, 'show'])->name('video.show');
 Route::view('/sejarah', 'binet.sejarah');

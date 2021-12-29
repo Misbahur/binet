@@ -75,7 +75,7 @@
         <a class="nav-link" href="{{ route('hiburan') }}">Hiburan</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('hiburan') }}">Gaya Hidup</a>
+        <a class="nav-link" href="{{ route('gayahidup') }}">Gaya Hidup</a>
       </li>
       <li class="nav-item pr-4">
         <a class="nav-link" href="{{ route('video') }}">Binet Nonton</a>
