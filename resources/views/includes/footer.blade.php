@@ -38,7 +38,7 @@
     </div>
     <div class="row justify-content-center align-items-center pt-5 border-top pb-5">
       <div class="col-auto text-muted">
-        Copyrights © 2020 All Rights Reserved by Odete Jaya Kreatif
+        Copyrights © 2022 All Rights Reserved by Odete Jaya Kreatif
       </div>
     </div>
   </div>

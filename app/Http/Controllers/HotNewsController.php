@@ -28,6 +28,9 @@ class HotNewsController extends Controller
 
     public function show($slug)
     {
+        // update viewer
+        News::find($slug)->increment('views');
+        // end
         $hotNewsLimit = HotNews::with(['news'])->limit(3)->get();
         $news = News::where('slug', $slug)->first();
         $newsLimit = HotNews::orderByDesc('created_at')->limit(3)->get();

@@ -11,7 +11,7 @@ class News extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = ['judul', 'slug', 'thumbnail', 'banner', 'berita', 'kategori', 
-                            'user_id'];
+                            'user_id', 'vie ws'];
 
     public function status()
     {

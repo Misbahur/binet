@@ -8,11 +8,15 @@ use App\Models\Status;
 use App\Models\Advertisement;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use DB;
 
 class ViewController extends Controller
 {
     public function index($slug)
     {
+        // update viewer
+        DB::table('news')->where('slug', $slug)->increment('views', 1);
+        // end
         $hotNewsLimit = HotNews::with(['news'])->limit(3)->get();
         $news = News::where('slug', $slug)->first();
         $newsLimit = Status::where('status', 'Post')->orderByDesc('created_at')->limit(3)->get();

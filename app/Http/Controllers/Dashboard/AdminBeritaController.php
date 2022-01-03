@@ -35,19 +35,19 @@ class AdminBeritaController extends Controller
     {
         $request->validate([
             'judul' => 'required|string|max:100',
-            'thumbnail' => 'required|mimes:jpeg,jpg,png', 
-            'thumbnail.*' => 'image|max:1024',
+            'thumbnail' => 'required|image|mimes:jpeg,jpg,png|max:5000', 
+            // 'thumbnail.*' => 'image|max:1024',
             'kategori' => 'required|string',
-            'banner' => 'required|mimes:jpeg,jpg,png', 
-            'banner.*' => 'image|max:1024',
+            'banner' => 'required|image|mimes:jpeg,jpg,png|max:5000', 
+            // 'banner.*' => 'image|max:1024',
             'berita' => 'required|string',
         ]);
 
-        $namaFileThumbnail = Str::random(30) . '.' . $request->thumbnail->getClientOriginalExtension(); 
-        $request->thumbnail->move(public_path('/storage/thumbnail'), $namaFileThumbnail);
+        $namaFileThumbnail = Str::random(30) . '.' . $request->thumbnail->extension(); 
+        $request->file('thumbnail')->storeAs('thumbnails', $namaFileThumbnail, 'public');
         
-        $namaFileBanner = Str::random(30) . '.' . $request->banner->getClientOriginalExtension();
-        $request->banner->move(public_path('/storage/banner'), $namaFileBanner);
+        $namaFileBanner = Str::random(30) . '.' . $request->banner->extension();
+        $request->file('banner')->storeAs('banners', $namaFileBanner, 'public');
 
         $news = News::create([
             'judul' => $request->judul,
@@ -57,6 +57,7 @@ class AdminBeritaController extends Controller
             'berita' => $request->berita,
             'kategori' => $request->kategori,
             'user_id' => Auth::user()->id,
+            'views' => 0,
         ]);
 
         if($request->kategori == 'Hot News') {
