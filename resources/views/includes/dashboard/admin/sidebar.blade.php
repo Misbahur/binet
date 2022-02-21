@@ -40,6 +40,12 @@
     </a>
   </li>
   <li class="nav-item active">
+    <a class="nav-link" href="{{ route('adminlive.index') }}">
+      <i class="fas fa-fw fa-video"></i>
+      <span>Live Stream</span>
+    </a>
+  </li>
+  <li class="nav-item active">
     <a class="nav-link" href="{{ route('adminstatus.index') }}">
       <i class="fas fa-fw fa-upload"></i>
       <span>Status</span>

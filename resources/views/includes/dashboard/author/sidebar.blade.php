@@ -2,9 +2,9 @@
   <!-- Sidebar - Brand -->
   <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/dashboard') }}">
     <div class="sidebar-brand-icon">
-      <img src="{{ url('/frontend/images/logo/tvrisumut.png') }}" alt="Logo TVRI" width="70px">
+      <img src="{{ url('/frontend/images/logo/logoutama.png') }}" alt="Logo TVRI" width="70px">
     </div>
-    <div class="sidebar-brand-text mx-3">Portal TVRI</div>
+    <div class="sidebar-brand-text mx-3">Portal BINET</div>
   </a>
   <!-- Divider -->
   <hr class="sidebar-divider my-0">

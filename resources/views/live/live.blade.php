@@ -1,6 +1,5 @@
 @extends('layouts.home')
-@section('title', $news->judul)
-
+@section('title', $live->judul)
 @section('content')
 {{-- Iklan --}}
 <div class="left-iklan mt-2">
@@ -36,8 +35,8 @@
       <div class="row mr-lg-3 ml-lg-4">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{ route('home') }}">BINET</a></li>
-          <li class="breadcrumb-item"><a href="{{ route('ekonomi') }}">EKONOMI</a></li>
-          <li class="breadcrumb-item active" aria-current="page">{{ $news->judul }}</li>
+          <li class="breadcrumb-item"><a href="{{ route('video') }}">Live Streaming</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{ $live->judul }}</li>
         </ol>
       </div>
     </div>
@@ -48,15 +47,21 @@
       <div class="col-12 col-lg-8 left-content">
         <div class="main-news">
           <div class="main-image">
-            <img src="{{ url('/storage/banner', $news->banner) }}" alt="" class="img-fluid rounded mx-auto d-block">
-            <p class="text-center pt-2">{{ $news->status->hari }} , {{  $news->status->tgl }}</p>
+            <div class="plyr__video-embed" id="player">
+              <iframe
+                src="https://www.youtube.com/embed/{{ $live->url }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                allowfullscreen
+                allowtransparency
+                allow="autoplay"
+              ></iframe>
+            </div>
           </div>
           <div class="main-title text-center mt-3">
-            <h1>{{ $news->judul }}</h1>
+            <h1>{{ $live->judul }}</h1>
           </div>
           <div class="main-full-news p-3">
             <p>
-              {!! $news->berita !!}
+              {!! $live->deskripsi !!}
             </p>
           </div>
         </div>
@@ -65,17 +70,18 @@
         <div class="card pb-5">
           <div class="card-body">
             <div class="news-content">
-              <h3>Berita Terbaru</h3>
-              @foreach ($newsLimit as $newsL)
+              <h3>Video Terbaru</h3>
+              @foreach ($newVideos as $newVideo)
                 <div class="media mt-3">
                   <div class="zoom-effect">
                     <div class="kotak">
-                      <img src="{{ url('/storage/thumbnail', $newsL->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
+                      <a href="{{ route('video', $newVideo->slug) }}">
+                        <img src="{{ url('/storage/video/thumbnail', $newVideo->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
+                      </a>
                     </div>  
                   </div>
                   <div class="media-body">
-                    <p class="m-0">{{ $newsL->judul }}</p>
-                    <a href="{{ route('sports.show', $newsL->slug) }}">Baca Selengkapnya...</a>
+                    <p class="m-0">{{ $newVideo->judul }}</p>
                   </div>
                 </div>
               @endforeach
@@ -105,22 +111,22 @@
     <div class="recomment-news">
       <div class="row mt-5 mr-lg-3 ml-lg-3">
         <div class="col-12">
-          <h3>Baca Juga Berita Lainnya</h3>
+          <h3>Tonton Video Lainnya</h3>
         </div>
       </div>
       <div class="row justify-content-center">
-        @foreach ($newsLimitAll as $newsLimitA)
+        @foreach ($videoAll as $videoA)
         <div class="col-12 col-lg-3 col-md-6 mt-3">
           <div class="card">
             <div class="zoom-effect">
               <div class="kotak">
-                <a href="{{ route('sports.show', $newsLimitA->slug) }}">
-                  <img src="{{ url('/storage/thumbnail', $newsLimitA->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
+                <a href="">
+                  <img src="{{ url('/storage/video/thumbnail', $videoA->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
                 </a>
               </div>
             </div>
             <div class="card-body">
-              <p>{{ $newsLimitA->judul }}</p>
+              <p>{{ $live->judul }}</p>
             </div>
           </div>
         </div>

@@ -39,7 +39,7 @@
             <h3>Tidak ada Berita Hot News Saat Ini</h3>
           @else 
             <div class="jumbotron p-0">
-              <img src="{{ url('/storage/thumbnail', $hotNews->news->thumbnail) }}" alt="" class="img-fluid">
+              <img src="{{ url('/storage/thumbnails', $hotNews->news->thumbnail) }}" alt="" class="img-fluid">
               <div class="title-news">
                 <p class="badge badge-danger">{{ $hotNews->news->kategori }}</p>
                 <a href="{{ route('view', $hotNews->news->slug) }}">
@@ -58,7 +58,7 @@
                   <div class="media mt-3">
                     <div class="zoom-effect">
                       <div class="kotak">
-                        <img src="{{ url('/storage/thumbnail', $newsL->news->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
+                        <img src="{{ url('/storage/thumbnails', $newsL->news->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
                       </div>  
                     </div>
                     <div class="media-body">

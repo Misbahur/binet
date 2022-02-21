@@ -32,7 +32,7 @@
             <div class="form-group col-12 col-lg-6">
               <label for="ketegori">Kategori Berita</label>
               <select name="kategori" id="kategori" class="form-control @error('kategori') is-invalid @enderror">
-                <option>Pilih Kategori</option>
+                <option value="" selected disabled>Pilih Kategori</option>
                 @foreach ($categories as $category)
                   <option value="{{ $category->kategori }}">{{ $category->kategori }}</option>
                 @endforeach

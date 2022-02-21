@@ -36,7 +36,8 @@
       <div class="row mr-lg-3 ml-lg-4">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{ route('home') }}">BINET</a></li>
-          <li class="breadcrumb-item"><a href="{{ route('ekonomi') }}">EKONOMI</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('hotNews') }}">News</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('nasional') }}">Nasional</a></li>
           <li class="breadcrumb-item active" aria-current="page">{{ $news->judul }}</li>
         </ol>
       </div>
@@ -48,7 +49,7 @@
       <div class="col-12 col-lg-8 left-content">
         <div class="main-news">
           <div class="main-image">
-            <img src="{{ url('/storage/banner', $news->banner) }}" alt="" class="img-fluid rounded mx-auto d-block">
+            <img src="{{ url('/storage/banners', $news->banner) }}" alt="" class="img-fluid rounded mx-auto d-block">
             <p class="text-center pt-2">{{ $news->status->hari }} , {{  $news->status->tgl }}</p>
           </div>
           <div class="main-title text-center mt-3">
@@ -70,12 +71,12 @@
                 <div class="media mt-3">
                   <div class="zoom-effect">
                     <div class="kotak">
-                      <img src="{{ url('/storage/thumbnail', $newsL->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
+                      <img src="{{ url('/storage/thumbnails', $newsL->news->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
                     </div>  
                   </div>
                   <div class="media-body">
-                    <p class="m-0">{{ $newsL->judul }}</p>
-                    <a href="{{ route('sports.show', $newsL->slug) }}">Baca Selengkapnya...</a>
+                    <p class="m-0">{{ $newsL->news->judul }}</p>
+                    <a href="{{ route('hotNews.show', $newsL->news->slug) }}">Baca Selengkapnya...</a>
                   </div>
                 </div>
               @endforeach
@@ -114,13 +115,13 @@
           <div class="card">
             <div class="zoom-effect">
               <div class="kotak">
-                <a href="{{ route('sports.show', $newsLimitA->slug) }}">
-                  <img src="{{ url('/storage/thumbnail', $newsLimitA->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
+                <a href="{{ route('hotNews.show', $newsLimitA->news->slug) }}">
+                  <img src="{{ url('/storage/thumbnails', $newsLimitA->news->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
                 </a>
               </div>
             </div>
             <div class="card-body">
-              <p>{{ $newsLimitA->judul }}</p>
+              <p>{{ $newsLimitA->news->judul }}</p>
             </div>
           </div>
         </div>
@@ -129,4 +130,4 @@
     </div>
   </div>
 </div>
-@endsection
+@endsection 

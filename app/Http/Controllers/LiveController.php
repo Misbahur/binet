@@ -2,20 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Live;
+use App\Models\Video;
 use App\Models\HotNews;
-use App\Models\News;
-use App\Models\Status;
 use App\Models\Advertisement;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use DB;
 
-class HotNewsController extends Controller
+class LiveController extends Controller
 {
     public function index()
     {
         $hotNewsLimit = HotNews::with(['news'])->limit(3)->get();
-        $news = HotNews::all();
+        $live = Live::first();
+        // dd($live);
+        $hotNewsLimit = HotNews::with(['news'])->limit(3)->get();
+        $newVideos = Video::orderBy('created_at', 'desc')->limit(3)->get();
+        $videoAll = Video::orderby('created_at', 'desc')->limit(30)->get();
         $topAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'top')
         ->first();
         $leftAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'left')
@@ -24,18 +27,15 @@ class HotNewsController extends Controller
         ->first();
         $middleAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'middle')
         ->first();
-        return view('hotNews.hotNews', compact('hotNewsLimit', 'news', 'topAdvertisement', 'leftAdvertisement', 'rightAdvertisement', 'middleAdvertisement'));
+        return view('live.live', compact('live','hotNewsLimit', 'hotNewsLimit', 'newVideos', 'videoAll', 'topAdvertisement', 'leftAdvertisement', 'rightAdvertisement', 'middleAdvertisement'));
     }
 
     public function show($slug)
     {
-        // update viewer
-        DB::table('news')->where('slug', $slug)->increment('views', 1);
-        // end
+        $video = Video::where('slug', $slug)->first();
         $hotNewsLimit = HotNews::with(['news'])->limit(3)->get();
-        $news = News::where('slug', $slug)->first();
-        $newsLimit = HotNews::orderByDesc('created_at')->limit(3)->get();
-        $newsLimitAll = HotNews::orderByDesc('created_at')->offset(3)->limit(12)->get();
+        $newVideos = Video::orderBy('created_at', 'desc')->limit(3)->get();
+        $videoAll = Video::orderby('created_at', 'desc')->limit(30)->get();
         $topAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'top')
         ->first();
         $leftAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'left')
@@ -44,6 +44,6 @@ class HotNewsController extends Controller
         ->first();
         $middleAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'middle')
         ->first();
-        return view('hotNews.view', compact('hotNewsLimit', 'news', 'newsLimit', 'newsLimitAll', 'topAdvertisement', 'leftAdvertisement', 'rightAdvertisement', 'middleAdvertisement'));
+        return view('live.view', compact('video', 'hotNewsLimit', 'newVideos', 'videoAll', 'topAdvertisement', 'leftAdvertisement', 'rightAdvertisement', 'middleAdvertisement'));
     }
 }

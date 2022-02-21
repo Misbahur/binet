@@ -35,7 +35,6 @@
             <div class="form-group col-12 col-lg-6">
               <label for="ketegori">Kategori Berita</label>
               <select name="kategori" id="kategori" class="form-control @error('kategori') is-invalid @enderror">
-                <option>Pilih Kategori</option>
                 @foreach ($categories as $category)
                   @if ($news->kategori == $category->kategori)
                     <option value="{{ $category->kategori }}" selected>{{ $category->kategori }}</option>

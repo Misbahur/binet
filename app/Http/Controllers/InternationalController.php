@@ -8,14 +8,13 @@ use App\Models\Status;
 use App\Models\Advertisement;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use DB;
 
-class HotNewsController extends Controller
+class InternationalController extends Controller
 {
     public function index()
     {
         $hotNewsLimit = HotNews::with(['news'])->limit(3)->get();
-        $news = HotNews::all();
+        $news = News::where('kategori', 'international')->get();
         $topAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'top')
         ->first();
         $leftAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'left')
@@ -24,18 +23,15 @@ class HotNewsController extends Controller
         ->first();
         $middleAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'middle')
         ->first();
-        return view('hotNews.hotNews', compact('hotNewsLimit', 'news', 'topAdvertisement', 'leftAdvertisement', 'rightAdvertisement', 'middleAdvertisement'));
+        return view('international.international', compact('hotNewsLimit', 'news', 'topAdvertisement', 'leftAdvertisement', 'rightAdvertisement', 'middleAdvertisement'));
     }
 
     public function show($slug)
     {
-        // update viewer
-        DB::table('news')->where('slug', $slug)->increment('views', 1);
-        // end
         $hotNewsLimit = HotNews::with(['news'])->limit(3)->get();
         $news = News::where('slug', $slug)->first();
-        $newsLimit = HotNews::orderByDesc('created_at')->limit(3)->get();
-        $newsLimitAll = HotNews::orderByDesc('created_at')->offset(3)->limit(12)->get();
+        $newsLimit = News::where('kategori', 'international')->orderByDesc('created_at')->limit(3)->get();
+        $newsLimitAll = News::where('kategori', 'international')->orderByDesc('created_at')->offset(3)->limit(12)->get();
         $topAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'top')
         ->first();
         $leftAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'left')
@@ -44,6 +40,6 @@ class HotNewsController extends Controller
         ->first();
         $middleAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'middle')
         ->first();
-        return view('hotNews.view', compact('hotNewsLimit', 'news', 'newsLimit', 'newsLimitAll', 'topAdvertisement', 'leftAdvertisement', 'rightAdvertisement', 'middleAdvertisement'));
+        return view('international.view', compact('hotNewsLimit', 'news', 'newsLimit', 'newsLimitAll', 'topAdvertisement', 'leftAdvertisement', 'rightAdvertisement', 'middleAdvertisement'));
     }
 }

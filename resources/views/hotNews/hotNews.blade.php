@@ -35,19 +35,14 @@
       <div class="row mr-lg-3 ml-lg-4">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{ route('home') }}">BINET</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('hotNews') }}">News</a></li>
           <li class="breadcrumb-item active" aria-current="page">Hot News</li>
         </ol>
       </div>
     </div>
   </nav>
 
-  <nav class="navbar navbar-light">
-    <div class="container justify-content-start">
-      <button class="btn btn-sm btn-outline-secondary mr-2 active" type="button">Lokal</button>
-      <button class="btn btn-sm btn-outline-secondary mr-2" type="button">Nasional</button>
-      <button class="btn btn-sm btn-outline-secondary mr-2" type="button">Internasional</button>
-    </div>
-  </nav>
+  @include('includes.kategorimenu')
 
   <div class="container">
     <div class="row justify-content-center mr-lg-3 ml-lg-4">
@@ -57,7 +52,7 @@
           <div class="zoom-effect">
             <div class="kotak">
               <a href="{{ route('hotNews.show', $news->news->slug) }}">
-                <img src="{{ url('/storage/thumbnail', $news->news->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
+                <img src="{{ url('/storage/thumbnails', $news->news->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
               </a>
             </div>
           </div>

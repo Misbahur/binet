@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TVRI</title>
+  <title>BINET</title>
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,9 +21,9 @@
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light first-navbar">
       <!-- Mobile Logo -->
-      <img src="/frontend/images/logo/tvrisumut.png" alt="" width="150px" class="logo d-md-none mx-auto">
+      <img src="/frontend/images/logo/logoutama.png" alt="" width="150px" class="logo d-md-none mx-auto">
       <!-- Dekstop Logo-->
-      <img src="/frontend/images/logo/tvrisumut.png" alt="" width="170px" class="logo d-none d-md-block">
+      <img src="/frontend/images/logo/logoutama.png" alt="" width="170px" class="logo d-none d-md-block">
       <button class="navbar-toggler small" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -59,21 +59,6 @@
       <ul class="navbar-nav mx-auto">
         <li class="nav-item pr-4">
           <a class="nav-link" href="{{ route('adminvidio.index') }}">Home</a>
-        </li>
-        <li class="nav-item pr-4">
-          <a class="nav-link" href="#">TVRI News</a>
-        </li>
-        <li class="nav-item pr-4">
-          <a class="nav-link" href="#">TVRI Edukasi</a>
-        </li>
-        <li class="nav-item pr-4">
-          <a class="nav-link" href="#">TVRI Sport</a>
-        </li>
-        <li class="nav-item pr-4">
-          <a class="nav-link" href="#">TVRI Otomotiv</a>
-        </li>
-        <li class="nav-item pr-4">
-          <a class="nav-link" href="#">Live Streaming</a>
         </li>
       </ul>
     </div>
@@ -238,7 +223,7 @@
         <div class="col-12 col-lg-3 d-flex align-items-center">
           <div class="row">
             <div class="col-lg-12">
-              <img src="/frontend/images/logo/tvrisumut.png" alt="Logo">
+              <img src="/frontend/images/logo/logoutama.png" alt="Logo">
             </div>
           </div>
         </div>

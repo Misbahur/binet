@@ -1,5 +1,5 @@
 @extends('layouts.home')
-@section('title', 'BINET Noton')
+@section('title', 'BINET Hot News')
 @section('content')
 {{-- Iklan --}}
 <div class="left-iklan mt-2">
@@ -35,26 +35,29 @@
       <div class="row mr-lg-3 ml-lg-4">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{ route('home') }}">BINET</a></li>
-          <li class="breadcrumb-item active" aria-current="page">TV</li>
+          <li class="breadcrumb-item"><a href="{{ route('hotNews') }}">News</a></li>
+          <li class="breadcrumb-item active" aria-current="page">International</li>
         </ol>
       </div>
     </div>
   </nav>
 
+  @include('includes.kategorimenu')
+
   <div class="container">
     <div class="row justify-content-center mr-lg-3 ml-lg-4">
-      @foreach ($videos as $video)
+      @foreach ($news as $news)
       <div class="col-12 col-lg-3 col-md-4 mt-3">
         <div class="card">
           <div class="zoom-effect">
             <div class="kotak">
-              <a href="{{ route('video.show', $video->slug) }}">
-                <img src="{{ url('/storage/video/thumbnail', $video->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
+              <a href="{{ route('hotNews.show', $news->news->slug) }}">
+                <img src="{{ url('/storage/thumbnails', $news->news->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
               </a>
             </div>
           </div>
           <div class="card-body">
-            <p>{{ $video->judul }}</p>
+            <p>{{ $news->news->judul }}</p>
           </div>
         </div>
       </div>

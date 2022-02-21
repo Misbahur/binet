@@ -9,6 +9,11 @@ use App\Http\Controllers\SebudNewsController;
 use App\Http\Controllers\EkonomiNewsController;
 use App\Http\Controllers\HiburanController;
 use App\Http\Controllers\GayaHidupNewsController;
+use App\Http\Controllers\LokalController;
+use App\Http\Controllers\NasionalController;
+use App\Http\Controllers\InternationalController;
+use App\Http\Controllers\LiveController;
+
 
 // Dashboard
 // Admin
@@ -19,6 +24,7 @@ use App\Http\Controllers\Dashboard\AdminStatusBeritaController;
 use App\Http\Controllers\Dashboard\AdminAuthorController;
 use App\Http\Controllers\Dashboard\IklanController;
 use App\Http\Controllers\Dashboard\AdminVideoController;
+use App\Http\Controllers\Dashboard\AdminLiveController;
 // Author
 use App\Http\Controllers\Dashboard\AuthorDashboardController;
 use App\Http\Controllers\Dashboard\BeritaController;
@@ -47,6 +53,16 @@ Route::get('/hiburan', [HiburanController::class, 'index'])->name('hiburan');
 Route::get('/hiburan/{slug}', [HiburanController::class, 'show'])->name('hiburan.show');
 Route::get('/gayahidup', [GayaHidupNewsController::class, 'index'])->name('gayahidup');
 Route::get('/gayahidup/{slug}', [GayaHidupNewsController::class, 'show'])->name('gayahidup.show');
+Route::get('/lokal', [LokalController::class, 'index'])->name('lokal');
+Route::get('/lokal/{slug}', [LokalController::class, 'show'])->name('lokal.show');
+Route::get('/nasional', [NasionalController::class, 'index'])->name('nasional');
+Route::get('/nasional/{slug}', [NasionalController::class, 'show'])->name('nasional.show');
+Route::get('/international', [InternationalController::class, 'index'])->name('international');
+Route::get('/international/{slug}', [InternationalController::class, 'show'])->name('international.show');
+
+Route::get('/live', [LiveController::class, 'index'])->name('live');
+// Route::get('/live/{slug}', [LiveController::class, 'show'])->name('live.show');
+
 Route::get('/video', [VideoController::class, 'index'])->name('video');
 Route::get('/video/{slug}', [VideoController::class, 'show'])->name('video.show');
 Route::view('/sejarah', 'binet.sejarah');
@@ -67,6 +83,7 @@ Route::prefix('/admin')
         Route::resource('/adminstatus', AdminStatusBeritaController::class);
         Route::resource('/author', AdminAuthorController::class);
         Route::resource('/adminvidio', AdminVideoController::class);
+        Route::resource('/adminlive', AdminliveController::class);
         Route::resource('/iklan', IklanController::class);
       });
       

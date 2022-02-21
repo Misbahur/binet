@@ -41,6 +41,8 @@
     </div>
   </nav>
 
+  @include('includes.kategorimenu')
+
   <div class="container">
     <div class="row justify-content-center mr-lg-3 ml-lg-4">
       @foreach ($news as $news)
