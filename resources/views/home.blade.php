@@ -85,7 +85,7 @@
               <div class="thumbnail">
                 <div class="zoom-effect">
                   <div class="kotak">
-                    <a href="{{ route('view', $newsLimitA->news->slug) }}">
+                    <a href="{{ route('view', $newsLimitA->slug) }}">
                       <img src="{{ url('/storage/thumbnail', $newsLimitA->news->thumbnail) }}" class="mr-3 rounded" alt="Thumbnail">
                     </a>
                   </div>  
