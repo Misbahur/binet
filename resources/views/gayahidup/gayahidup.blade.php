@@ -51,7 +51,7 @@
           <div class="zoom-effect">
             <div class="kotak">
               <a href="{{ route('hotNews.show', $news->slug) }}">
-                <img src="{{ url('/storage/thumbnail', $news->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
+                <img src="{{ url('/storage/thumbnails', $news->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
               </a>
             </div>
           </div>
