@@ -16,6 +16,6 @@ class Status extends Model
 
     public function news()
     {
-        return $this->belongsTo(News::class, 'id');
+        return $this->belongsTo(News::class);
     }
 }

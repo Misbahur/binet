@@ -15,16 +15,16 @@ class News extends Model
 
     public function status()
     {
-        return $this->hasOne(Status::class, 'news_id');
+        return $this->hasOne(Status::class);
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'id');
+        return $this->belongsTo(User::class);
     }
 
     public function hotNews()
     {
-        return $this->hasOne(HotNews::class, 'id');
+        return $this->hasOne(HotNews::class);
     }
 }
