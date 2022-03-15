@@ -101,14 +101,14 @@ class AdminBeritaController extends Controller
             $namaFileThumbnail = $request->thumbnailLama;
         } else {
             $namaFileThumbnail = Str::random(30) . '.' . $request->thumbnail->getClientOriginalExtension(); 
-            $request->thumbnail->move(public_path('/storage/thumbnail'), $namaFileThumbnail);
+            $request->thumbnail->storeAs('thumbnails', $namaFileThumbnail, 'public');
         }
 
         if(!$request->banner) {
             $namaFileBanner = $request->bannerLama;
         } else {
             $namaFileBanner = Str::random(30) . '.' . $request->banner->getClientOriginalExtension();
-            $request->banner->move(public_path('/storage/banner'), $namaFileBanner);
+            $request->banner->storeAs('banners', $namaFileBanner, 'public');
         }
 
         $news = News::find($id)->update([

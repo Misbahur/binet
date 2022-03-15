@@ -37,6 +37,9 @@ class KategoriSeeder extends Seeder
             [
                 'Kategori' => 'gayahidup',
             ],
+            [
+                'Kategori' => 'Hot News',
+            ],
         ]);
     }
 }
