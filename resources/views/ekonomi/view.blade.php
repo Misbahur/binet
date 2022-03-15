@@ -70,7 +70,7 @@
                 <div class="media mt-3">
                   <div class="zoom-effect">
                     <div class="kotak">
-                      <img src="{{ url('/storage/thumbnail', $newsL->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
+                      <img src="{{ url('/storage/thumbnails', $newsL->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
                     </div>  
                   </div>
                   <div class="media-body">
@@ -114,8 +114,8 @@
           <div class="card">
             <div class="zoom-effect">
               <div class="kotak">
-                <a href="{{ route('sports.show', $newsLimitA->slug) }}">
-                  <img src="{{ url('/storage/thumbnail', $newsLimitA->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
+                <a href="{{ route('ekonomi.show', $newsLimitA->slug) }}">
+                  <img src="{{ url('/storage/thumbnails', $newsLimitA->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
                 </a>
               </div>
             </div>

@@ -48,7 +48,7 @@
       <div class="col-12 col-lg-8 left-content">
         <div class="main-news">
           <div class="main-image">
-            <img src="{{ url('/storage/banner', $news->banner) }}" alt="" class="img-fluid rounded mx-auto d-block">
+            <img src="{{ url('/storage/banners', $news->banner) }}" alt="" class="img-fluid rounded mx-auto d-block">
             <p class="text-center pt-2">{{ $news->status->hari }} , {{  $news->status->tgl }}</p>
           </div>
           <div class="main-title text-center mt-3">
@@ -70,7 +70,7 @@
                 <div class="media mt-3">
                   <div class="zoom-effect">
                     <div class="kotak">
-                      <img src="{{ url('/storage/thumbnail', $newsL->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
+                      <img src="{{ url('/storage/thumbnails', $newsL->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
                     </div>  
                   </div>
                   <div class="media-body">
@@ -115,7 +115,7 @@
             <div class="zoom-effect">
               <div class="kotak">
                 <a href="{{ route('sports.show', $newsLimitA->slug) }}">
-                  <img src="{{ url('/storage/thumbnail', $newsLimitA->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
+                  <img src="{{ url('/storage/thumbnails', $newsLimitA->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
                 </a>
               </div>
             </div>
