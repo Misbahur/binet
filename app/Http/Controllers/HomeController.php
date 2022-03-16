@@ -16,7 +16,7 @@ class HomeController extends Controller
         $hotNews = HotNews::with(['news'])->latest()->first();
         $hotNewsLimit = HotNews::with(['news'])->limit(3)->get();
         $newsLimit = Status::where('status', 'Post')->orderByDesc('created_at')->limit(3)->get();
-        $newsLimitAll = Status::where('status', 'Post')->orderByDesc('created_at')->offset(3)->limit(30)->get();
+        $newsLimitAll = Status::where('status', 'Post')->orderByDesc('created_at')->offset(3)->limit(6)->get();
         $videos = Video::orderByDesc('created_at')->limit(6)->get();
         $topAdvertisement = Advertisement::where('awalTampil', Carbon::now()->format('Y-m-d'))->where('posisi', 'top')
         ->first();
