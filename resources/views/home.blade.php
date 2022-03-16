@@ -154,7 +154,7 @@
       </div>
 
       <div class="row mt-4 justify-content-center">
-        <a href="#" class="btn btn-load-more">LIHAT LEBIH BANYAK >></a>
+        <a href="{{ route('video') }}" class="btn btn-load-more">LIHAT LEBIH BANYAK >></a>
       </div>
     </div>
   </div>
