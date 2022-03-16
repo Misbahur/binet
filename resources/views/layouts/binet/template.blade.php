@@ -68,9 +68,9 @@
         <a class="nav-link" href="{{ route('home') }}">Home</a>
       </li>
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('hotNews') }}">Hot News</a>
+        <a class="nav-link" href="{{ route('hotNews') }}">News</a>
       </li>
-      <li class="nav-item pr-4">
+      {{-- <li class="nav-item pr-4">
         <a class="nav-link" href="{{ route('ekonomi') }}">Ekonomi</a>
       </li>
       <li class="nav-item pr-4">
@@ -81,9 +81,9 @@
       </li>
       <li class="nav-item pr-4">
         <a class="nav-link" href="{{ route('hiburan') }}">Gaya Hidup</a>
-      </li>
+      </li> --}}
       <li class="nav-item pr-4">
-        <a class="nav-link" href="{{ route('video') }}">Binet Nonton</a>
+        <a class="nav-link" href="{{ route('video') }}">Binet TV</a>
       </li>
       <li class="nav-item pr-4">
         <a class="nav-link" href="#">Live Streaming</a>
