@@ -1,5 +1,5 @@
 @extends('layouts.home')
-@section('title', $live->judul)
+@section('title', $live->judul ?? '')
 @section('content')
 {{-- Iklan --}}
 <div class="left-iklan mt-2">
