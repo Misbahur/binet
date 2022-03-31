@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TVRI</title>
+  <title>Binet</title>
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,9 +17,9 @@
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light first-navbar">
       <!-- Mobile Logo -->
-      <img src="/frontend/images/logo/tvrisumut.png" alt="" width="150px" class="logo d-md-none mx-auto">
+      <img src="/frontend/images/logo/logo1hitam.png" alt="" width="150px" class="logo d-md-none mx-auto">
       <!-- Dekstop Logo-->
-      <img src="/frontend/images/logo/tvrisumut.png" alt="" width="170px" class="logo d-none d-md-block">
+      <img src="/frontend/images/logo/logo1hitam.png" alt="" width="170px" class="logo d-none d-md-block">
       <button class="navbar-toggler small" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -59,46 +59,6 @@
     <button class="navbar-toggler small" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
-    <div class="collapse navbar-collapse small" id="navbarSupportedContent">
-      {{-- Top Iklan --}}
-      <ul class="navbar-nav ml-auto mr-auto top-iklan text-center">
-        @if ($topAdvertisement)
-          @if (($topAdvertisement->awalTampil && $topAdvertisement->akhirTampil) <=  \Carbon\Carbon::now()->format('Y-m-d'))
-            <a href="{{ $topAdvertisement->url }}" target="_blank">
-              <img src="{{ url('/storage/iklan', $topAdvertisement->iklan) }}" alt="">
-            </a>
-          @endif
-        @else
-          <a href="#">
-            <img src="{{ url('/storage/iklan/topBlank.png') }}" alt="">
-          </a>
-        @endif
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        @if (Route::has('login'))
-          @auth
-            {{-- Dekstop --}}
-            <form action="{{ route('logout') }}" method="POST">
-              @csrf
-              <a href="{{ route('logout') }}" class="my-2 py-2 my-lg-0 d-none d-md-block btn btn-signup ml-lg-4" onclick="event.preventDefault(); this.closest('form').submit();">
-                Logout
-              </a>
-            </form>
-            @else
-              <!-- Dekstop Button -->
-              <a href="{{ route('login') }}" class="my-2 py-2 my-lg-0 d-none d-md-block btn btn-login ml-lg-4">
-                Login
-              </a>
-      
-              <!-- Dekstop Button -->
-              <a href="{{ route('register') }}" class="my-2 py-2 my-lg-0 d-none d-md-block btn btn-signup ml-lg-4">
-                Sign Up
-              </a>
-          @endauth
-        @endif
-      </ul>
-    </div>
   </nav>
   
   <!-- Content -->
