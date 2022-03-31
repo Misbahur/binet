@@ -43,7 +43,7 @@
               <div class="title-news">
                 <p class="badge badge-danger">{{ $hotNews->news->kategori }}</p>
                 <a href="{{ route('view', $hotNews->news->slug) }}">
-                  <h1>{{ $hotNews->news->judul }}</h1>
+                  <h1>{{ Str::limit($hotNews->news->judul, 60) }}</h1>
                 </a>
               </div>
             </div>
