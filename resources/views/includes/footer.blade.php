@@ -30,9 +30,11 @@
       <div class="col-lg-3">
         <h5>Sosial Media</h5>
         <div class="sosial-media">
-          <a href="https://www.facebook.com/misbahur.rifqi/?show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_transition=0&show_community_review_changes=0"><img src="{{ url('/frontend/images/icon/facebook.png') }}" alt=""></a>
-          <a href="https://instagram.com/misbahur_rifqi"><img src="{{ url('/frontend/images/icon/instagram.png') }}" alt=""></a>
-          <a href="https://www.youtube.com/channel/UCqqc2Fqbg4pM7xuK_onEuow"><img src="{{ url('/frontend/images/icon/youtube.png') }}" alt=""></a>
+          <a href="https://www.facebook.com/Binetwork-Media-100940785741826"><img src="{{ url('/frontend/images/icon/facebook.png') }}" alt=""></a>
+          <a href="https://www.instagram.com/binetworkofficial/"><img src="{{ url('/frontend/images/icon/instagram.png') }}" alt=""></a>
+          <a href="https://www.youtube.com/channel/UC4v_5dp455niMnrgXCTJaiQ"><img src="{{ url('/frontend/images/icon/youtube.png') }}" alt=""></a>
+          <a href="https://www.tiktok.com/@binetwork_media"><img src="{{ url('/frontend/images/icon/tiktok.png') }}" alt=""></a>
+          <a href="https://twitter.com/binetworkmedia"><img src="{{ url('/frontend/images/icon/twitter.png') }}" alt=""></a>
         </div>
       </div>
     </div>
