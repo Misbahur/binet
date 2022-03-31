@@ -76,7 +76,7 @@
                   <div class="zoom-effect">
                     <div class="kotak">
                       <a href="{{ route('video', $newVideo->slug) }}">
-                        <img src="{{ url('/storage/video/thumbnails', $newVideo->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
+                        <img src="{{ url('/storage/video/thumbnail', $newVideo->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
                       </a>
                     </div>  
                   </div>
