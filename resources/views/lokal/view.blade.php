@@ -71,7 +71,7 @@
                 <div class="media mt-3">
                   <div class="zoom-effect">
                     <div class="kotak">
-                      <img src="{{ url('/storage/thumbnails', $newsL->news->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
+                      <img src="{{ url('/storage/thumbnails', $newsL->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
                     </div>  
                   </div>
                   <div class="media-body">
