@@ -36,7 +36,7 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{ route('home') }}">BINET</a></li>
           <li class="breadcrumb-item"><a href="{{ route('video') }}">Live Streaming</a></li>
-          <li class="breadcrumb-item active" aria-current="page">{{ $live->judul }}</li>
+          <li class="breadcrumb-item active" aria-current="page">{{ $live->judul ?? '' }}</li>
         </ol>
       </div>
     </div>
