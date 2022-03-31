@@ -126,7 +126,7 @@
               </div>
             </div>
             <div class="card-body">
-              <p>{{ $live->judul }}</p>
+              <p>{{ $live->judul ?? '' }}</p>
             </div>
           </div>
         </div>
