@@ -71,12 +71,12 @@
                 <div class="media mt-3">
                   <div class="zoom-effect">
                     <div class="kotak">
-                      <img src="{{ url('/storage/thumbnails', $newsL->news->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
+                      <img src="{{ url('/storage/thumbnails', $newsL->thumbnail) }}" class="mr-3 rounded" alt="..." height="75px" width="100px">
                     </div>  
                   </div>
                   <div class="media-body">
                     <p class="m-0">{{ $newsL->news->judul }}</p>
-                    <a href="{{ route('hotNews.show', $newsL->news->slug) }}">Baca Selengkapnya...</a>
+                    <a href="{{ route('hotNews.show', $newsL->slug) }}">Baca Selengkapnya...</a>
                   </div>
                 </div>
               @endforeach
@@ -115,13 +115,13 @@
           <div class="card">
             <div class="zoom-effect">
               <div class="kotak">
-                <a href="{{ route('hotNews.show', $newsLimitA->news->slug) }}">
-                  <img src="{{ url('/storage/thumbnails', $newsLimitA->news->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
+                <a href="{{ route('hotNews.show', $newsLimitA->slug) }}">
+                  <img src="{{ url('/storage/thumbnails', $newsLimitA->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
                 </a>
               </div>
             </div>
             <div class="card-body">
-              <p>{{ $newsLimitA->news->judul }}</p>
+              <p>{{ $newsLimitA->judul }}</p>
             </div>
           </div>
         </div>
