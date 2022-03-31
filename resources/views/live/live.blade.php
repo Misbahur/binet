@@ -45,26 +45,49 @@
   <div class="container">
     <div class="row mt-3 mb-5 mr-lg-3 ml-lg-3">
       <div class="col-12 col-lg-8 left-content">
-        <div class="main-news">
-          <div class="main-image">
-            <div class="plyr__video-embed" id="player">
-              <iframe
-                src="https://www.youtube.com/embed/{{ $live->url }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-                allowfullscreen
-                allowtransparency
-                allow="autoplay"
-              ></iframe>
+        @if ($live->judul == null)
+          <div class="main-news">
+            <div class="main-image">
+              <div class="plyr__video-embed" id="player">
+                <iframe
+                  src="https://www.youtube.com/embed/{{ '' }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                  allowfullscreen
+                  allowtransparency
+                  allow="autoplay"
+                ></iframe>
+              </div>
+            </div>
+            <div class="main-title text-center mt-3">
+              <h1>{{ 'Tidak Ada Live' }}</h1>
+            </div>
+            <div class="main-full-news p-3">
+              <p>
+                {{ 'Not Found' }}
+              </p>
             </div>
           </div>
-          <div class="main-title text-center mt-3">
-            <h1>{{ $live->judul }}</h1>
+        @else
+          <div class="main-news">
+            <div class="main-image">
+              <div class="plyr__video-embed" id="player">
+                <iframe
+                  src="https://www.youtube.com/embed/{{ $live->url }}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                  allowfullscreen
+                  allowtransparency
+                  allow="autoplay"
+                ></iframe>
+              </div>
+            </div>
+            <div class="main-title text-center mt-3">
+              <h1>{{ $live->judul }}</h1>
+            </div>
+            <div class="main-full-news p-3">
+              <p>
+                {!! $live->deskripsi !!}
+              </p>
+            </div>
           </div>
-          <div class="main-full-news p-3">
-            <p>
-              {!! $live->deskripsi !!}
-            </p>
-          </div>
-        </div>
+        @endif
       </div>
       <div class="col-12 col-lg-4 right-content">
         <div class="card pb-5">
