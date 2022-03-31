@@ -75,8 +75,8 @@
                     </div>  
                   </div>
                   <div class="media-body">
-                    <p class="m-0">{{ $newsL->news->judul }}</p>
-                    <a href="{{ route('hotNews.show', $newsL->news->slug) }}">Baca Selengkapnya...</a>
+                    <p class="m-0">{{ $newsL->judul }}</p>
+                    <a href="{{ route('hotNews.show', $newsL->slug) }}">Baca Selengkapnya...</a>
                   </div>
                 </div>
               @endforeach
