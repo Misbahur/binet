@@ -75,7 +75,7 @@
                   </div>
                   <div class="media-body">
                     <p class="m-0">{{ $newsL->judul }}</p>
-                    <a href="{{ route('sports.show', $newsL->slug) }}">Baca Selengkapnya...</a>
+                    <a href="{{ route('hotNews.show', $newsL->slug) }}">Baca Selengkapnya...</a>
                   </div>
                 </div>
               @endforeach

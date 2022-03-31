@@ -75,7 +75,7 @@
                   </div>
                   <div class="media-body">
                     <p class="m-0">{{ $newsL->judul }}</p>
-                    <a href="{{ route('sports.show', $newsL->slug) }}">Baca Selengkapnya...</a>
+                    <a href="{{ route('hotNews.show', $newsL->slug) }}">Baca Selengkapnya...</a>
                   </div>
                 </div>
               @endforeach
@@ -114,7 +114,7 @@
           <div class="card">
             <div class="zoom-effect">
               <div class="kotak">
-                <a href="{{ route('sports.show', $newsLimitA->slug) }}">
+                <a href="{{ route('hotNews.show', $newsLimitA->slug) }}">
                   <img src="{{ url('/storage/thumbnails', $newsLimitA->thumbnail) }}" class="card-img-top rounded mx-auto d-block" alt="...">
                 </a>
               </div>
