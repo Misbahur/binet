@@ -43,7 +43,7 @@
               <div class="title-news">
                 <p class="badge badge-danger">{{ $hotNews->news->kategori }}</p>
                 <a href="{{ route('view', $hotNews->news->slug) }}">
-                  <h2>{{ $hotNews->news->judul }}</h2>
+                  <h1>{{ $hotNews->news->judul }}</h1>
                 </a>
               </div>
             </div>
