@@ -48,7 +48,7 @@
       <div class="col-12 col-lg-8 left-content">
         <div class="main-news">
           <div class="main-image">
-            <img src="{{ url('/storage/banner', $news->banner) }}" alt="" class="img-fluid rounded mx-auto d-block">
+            <img src="{{ url('/storage/banners', $news->banner) }}" alt="" class="img-fluid rounded mx-auto d-block">
             <p class="text-center pt-2">{{ $news->status->hari }} , {{  $news->status->tgl }}</p>
           </div>
           <div class="main-title text-center mt-3">
