@@ -223,7 +223,7 @@
         <div class="col-12 col-lg-3 d-flex align-items-center">
           <div class="row">
             <div class="col-lg-12">
-              <img src="/frontend/images/logo/logoutama.png" alt="Logo">
+              <img src="/frontend/images/logo/logohitam.png" alt="Logo">
             </div>
           </div>
         </div>
