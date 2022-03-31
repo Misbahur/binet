@@ -45,7 +45,7 @@
   <div class="container">
     <div class="row mt-3 mb-5 mr-lg-3 ml-lg-3">
       <div class="col-12 col-lg-8 left-content">
-        @if ($live->judul == null)
+        @if ($live->judul ?? '')
           <div class="main-news">
             <div class="main-image">
               <div class="plyr__video-embed" id="player">
