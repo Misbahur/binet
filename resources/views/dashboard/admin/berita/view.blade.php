@@ -47,18 +47,17 @@
       </div>
     </nav>
   </div> 
-   <nav class="navbar navbar-expand-lg navbar-light first-navbar">
-    <!-- Mobile Logo -->
-    <a href="{{ route('home') }}">
-      <img src="{{ url('/frontend/images/logo/logo1hitam.png') }}" alt="" width="150px" class="logo d-md-none mx-auto">
-    </a>
-    <!-- Dekstop Logo-->
-    <a href="{{ route('home') }}">
-      <img src="{{ url('/frontend/images/logo/logo1hitam.png') }}" alt="" width="170px" class="logo d-none d-md-block">
-    </a>
-    <button class="navbar-toggler small" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-light secondary-navbar">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item pr-4">
+          <a class="nav-link" href="{{ route('adminberita.index') }}">Home</a>
+        </li>
+      </ul>
+    </div>
   </nav>
   
   <!-- Content -->
@@ -225,7 +224,7 @@
         <div class="col-12 col-lg-3 d-flex align-items-center">
           <div class="row">
             <div class="col-lg-12">
-              <img src="/frontend/images/logo/tvrisumut.png" alt="Logo">
+              <img src="/frontend/images/logo/logo1hitam.png" alt="Logo">
             </div>
           </div>
         </div>
